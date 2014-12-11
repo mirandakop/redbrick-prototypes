@@ -1,0 +1,20 @@
+<head>
+  <title>myFirstApp</title>
+</head>
+
+<body>
+  <div id="container">
+  <h1>Dit is mijn Prototype</h1>
+
+    {{> hello}}
+
+</div>
+</body>
+
+
+<template name="hello">
+  {{#with arduino}}
+  <p>Potvalue: {{ potValue }}</p>
+  <p>PressureBalue: {{ pressureValue }}</p>
+  {{/with}}
+</template>

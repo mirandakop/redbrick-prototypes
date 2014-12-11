@@ -27,7 +27,7 @@ const int analogOutLed = 9; // Analog output pin that the LED is attached to
 
 int potValue = 0;        // value read from the pot
 int ledOutputValue = 0;        // value output to the PWM (analog out)
-int pressureValue;
+int pressureValue = 0;
 
 void setup() {
   // initialize serial communications at 9600 bps:
@@ -36,15 +36,18 @@ void setup() {
 
 void loop() {
   // read the analog in values:
-  potValue = analogRead(analogInPot); // pot poort uitlezen            
- pressureValue = analogRead(analogInPressure);  
+  potValue = analogRead(A0); // pot poort uitlezen            
+ pressureValue = analogRead(A2);  
 
 // Write the value from the pot to the monitor          
-  Serial.println("potValue:" +potValue);      
+  Serial.print("potValue:");
+  Serial.println(potValue);  
   // write the value from the led to the monitor
-  Serial.println("ledOutputValue"+ledOutputValue);  
+  Serial.print("ledOutputValue:");  
+  Serial.println(ledOutputValue);  
   // write the value from the pressure to the monitor
-  Serial.println("pressureValue:"+pressureValue);     // the raw analog reading
+  Serial.print("pressureValue:");
+  Serial.println(pressureValue);     // the raw analog reading
 
   // map it to the range of the analog out:
   ledOutputValue = map(potValue, 0, 1023, 0, 255);  
@@ -52,7 +55,7 @@ void loop() {
   analogWrite(analogOutLed,ledOutputValue);  // dit gaat naar de led!!
 
 
- 
+
   // wait 1 milliseconds before the next loop
   // for the analog-to-digital converter to settle
   // after the last reading:

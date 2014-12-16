@@ -1,0 +1,32 @@
+<head>
+  <title>myFirstApp</title>
+</head>
+
+<body>
+  <div id="container">
+    <h1>Dit is mijn Prototype</h1>
+
+    {{> hello}}
+
+  </div>
+  <div id="svgTest">
+    {{> svgtest}}
+  </div>
+</body>
+
+
+<template name="hello">
+  {{#with arduino}}
+  <p>Potvalue: {{ potValue }}</p>
+  <p>PressureBalue: {{ pressureValue }}</p>
+  {{/with}}
+</template>
+
+<template name="svgtest">
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+  {{#with arduino}}
+  <rect x="164.7" y="170.2" fill="purple" fill-opacity="0.5" stroke-opacity="0.8" width="{{ potValue }}" height="{{ potValue }}"/>
+  {{/with}}
+</svg>
+</template>

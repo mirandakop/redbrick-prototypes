@@ -1,0 +1,19 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [],
+  "uses": [
+    {
+      "package": "meteor"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "web.cordova/packages/meteor-package-serialport.js",
+      "length": 0,
+      "offset": 0,
+      "servePath": "/packages/meteor-package-serialport.js",
+      "sourceMap": "web.cordova/packages/meteor-package-serialport.js.map"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"/packages/meteor-package-serialport.js","sources":["meteor-package-serialport/serialport.js"],"names":[],"mappings":";;;;;;;;AAAA,uC","sourcesContent":["SerialPort = Npm.require('serialport');\n"]}

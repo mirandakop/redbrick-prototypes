@@ -27,7 +27,7 @@ if (Meteor.isServer) {
     // code to run on server at startup
 
     //or whatever your device is connected to
-    var serialPort = new SerialPort.SerialPort("/dev/tty.usbmodem1411", {
+    var serialPort = new SerialPort.SerialPort("/dev/cu.usbmodem1411", {
       baudrate: 9600,
       parser: SerialPort.parsers.readline('\r\n')
     });
@@ -57,7 +57,7 @@ if (Meteor.isServer) {
           }
 
 
-          console.log(valueChopped);
+          //console.log(valueChopped);
 
         });
 
@@ -67,3 +67,4 @@ if (Meteor.isServer) {
 
       });
     }
+    

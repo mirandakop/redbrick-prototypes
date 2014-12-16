@@ -1,1 +1,0 @@
-SerialPort = Npm.require('serialport');

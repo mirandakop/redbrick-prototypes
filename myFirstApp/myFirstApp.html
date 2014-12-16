@@ -9,6 +9,9 @@
     {{> hello}}
 
 </div>
+<div id="svgTest">
+{{> svgtest}}
+</div>
 </body>
 
 
@@ -17,4 +20,15 @@
   <p>Potvalue: {{ potValue }}</p>
   <p>PressureBalue: {{ pressureValue }}</p>
   {{/with}}
+</template>
+
+<template name="svgtest">
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 414.9 356.2" enable-background="new 0 0 414.9 356.2" xml:space="preserve">
+  {{#with arduino}}
+  <rect fill="#7C7C7C" cx="{{ potValue }}" cy="174.4" r="150.6" />
+  {{/with}}
+</svg>
+
+
 </template>

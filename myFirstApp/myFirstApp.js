@@ -14,6 +14,13 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.svgtest.helpers({
+    arduino: function () {
+
+      return messageCollection.findOne({_id:"5M8qvrXoHaJE2dB5F"});
+    }
+  });
+
   Template.hello.events({
     'click button': function () {
       // increment the counter when button is clicked

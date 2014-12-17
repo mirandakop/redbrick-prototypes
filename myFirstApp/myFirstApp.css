@@ -4,21 +4,15 @@ Stappenplan:
 
 1: Nu werkt de aan en uit knop - gedaan
 2: Eerst een lichtje aansluiten aan de knop - gedaan
-3: Druksensor aansluiten en koppelen aan localhost:3000 - gedaan
-4:
 
+3: Druksensor aansluiten en koppelen aan localhost:3000
 4: Druksensor bij bepaalde waarde van kleur laten veranderen
 5: Druksensor en aan en uit knop met elkaar laten werken
 6: 1 kookpit afbeelding toevoegen en koppelen aan de knop en druksensor
 7: 5 keer herhalen.
 
 
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-{{#with arduino}}
-<rect x="164.7" y="170.2" fill="purple" fill-opacity="0.5" stroke-opacity="0.8" width="{{ potValue }}" height="{{ potValue }}"/>
-{{/with}}
-</svg>
+
 
 */
 

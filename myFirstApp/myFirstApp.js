@@ -1,17 +1,17 @@
 messageCollection = new Meteor.Collection('messages');
 
+
 if (Meteor.isClient) {
   // counter starts at 0
   //Session.setDefault("counter", 0);
 
   Template.hello.helpers({
     arduino: function () {
-      console.log(this);
-      return messageCollection.findOne({_id:"5M8qvrXoHaJE2dB5F"});
+		
+		var value = messageCollection.findOne({name:'messages'});
+		console.log('message: '+value); 
+		return value;
     },
-    log: function () {
-      console.log(this);
-    }
   });
 
   // Template.hello.events({
@@ -25,9 +25,13 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+	  
+	  
+	  
+	  var messageID = messageCollection.insert({'name':'messages'});
 
     //or whatever your device is connected to
-    var serialPort = new SerialPort.SerialPort("/dev/cu.usbmodem1411", {
+    var serialPort = new SerialPort.SerialPort("/dev/cu.usbmodem1421", {
       baudrate: 9600,
       parser: SerialPort.parsers.readline('\r\n')
     });
@@ -55,21 +59,20 @@ if (Meteor.isServer) {
         break;
       }
 
-      console.log(valueChopped);
+//      console.log(valueChopped);
 
     });
 
     Meteor.setInterval(function(){
-
-      messageCollection.update(
-        {_id:"5M8qvrXoHaJE2dB5F"},
-        {
+      messageCollection.update({_id:messageID},
+		  {
           'pressureValue':pressureValue,
-          'potValue':potValue
+          'potValue':potValue,
+			  'name':'messages'
         }
       );
 
-    },200);
+    },20);
 
   });
 

@@ -7,11 +7,19 @@ if (Meteor.isClient) {
 
   Template.hello.helpers({
     arduino: function () {
-		
+
 		var value = messageCollection.findOne({name:'messages'});
-		console.log('message: '+value); 
+		console.log('message: '+value);
 		return value;
     },
+  });
+
+  Template.svgtest.helpers({
+    arduino: function () {
+      var value = messageCollection.findOne({name:'messages'});
+      console.log('message: '+value);
+      return value;
+    }
   });
 
   // Template.hello.events({
@@ -25,13 +33,13 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
-	  
-	  
-	  
+
+
+
 	  var messageID = messageCollection.insert({'name':'messages'});
 
     //or whatever your device is connected to
-    var serialPort = new SerialPort.SerialPort("/dev/cu.usbmodem1421", {
+    var serialPort = new SerialPort.SerialPort("/dev/cu.usbmodem1411", {
       baudrate: 9600,
       parser: SerialPort.parsers.readline('\r\n')
     });

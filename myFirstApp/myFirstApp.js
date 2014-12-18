@@ -1,25 +1,25 @@
 messageCollection = new Meteor.Collection('messages');
 
-
 if (Meteor.isClient) {
   // counter starts at 0
-
-  Session.setDefault("counter", 0);
-
+  //Session.setDefault("counter", 0);
 
   Template.hello.helpers({
     arduino: function () {
-
+      console.log(this);
       return messageCollection.findOne({_id:"5M8qvrXoHaJE2dB5F"});
+    },
+    log: function () {
+      console.log(this);
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
-    }
-  });
+  // Template.hello.events({
+  //   'click button': function () {
+  //     // increment the counter when button is clicked
+  //     Session.set("counter", Session.get("counter") + 1);
+  //   }
+  // });
 }
 
 if (Meteor.isServer) {
@@ -46,7 +46,6 @@ if (Meteor.isServer) {
 
       var valueChopped = arduinoData.split(':');
 
-
       switch (valueChopped[0]) {
       case 'pressureValue':
         pressureValue = valueChopped[1];
@@ -56,14 +55,22 @@ if (Meteor.isServer) {
         break;
       }
 
-
       console.log(valueChopped);
 
     });
 
     Meteor.setInterval(function(){
-      messageCollection.update({_id:"5M8qvrXoHaJE2dB5F"},{'pressureValue':pressureValue,'potValue':potValue});
-    },20);
+
+      messageCollection.update(
+        {_id:"5M8qvrXoHaJE2dB5F"},
+        {
+          'pressureValue':pressureValue,
+          'potValue':potValue
+        }
+      );
+
+    },200);
 
   });
+
 }

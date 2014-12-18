@@ -14,7 +14,10 @@
 
 <template name="hello">
   {{#with arduino}}
-  <p>Potvalue: {{ potValue }}</p>
-  <p>PressureBalue: {{ pressureValue }}</p>
+  <p>Potvalue: {{potValue}}</p>
+  <p>PressureBalue: {{pressureValue}}</p>
+  <p>
+    {{log}}
+  </p>
   {{/with}}
 </template>

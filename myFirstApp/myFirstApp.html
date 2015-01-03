@@ -12,6 +12,10 @@
   <div id="svgTest">
     {{> svgtest}}
   </div>
+  <svg width="{{ potValue }}" height="{{ potValue }}">
+    <circle cx="50" cy="50" r="40" x="10" y="10" fill="blue" />
+  </svg>
+
 </body>
 
 
@@ -26,8 +30,30 @@
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
   {{#with arduino}}
-  <circle cx="80" cy="{{ pressureValue }}" r="{{ pressureValue }}" stroke-width="3" fill="grey" />
-  <rect x="164.7" y="170.2" fill="grey" fill-opacity="0.5" stroke-opacity="0.8" width="{{ potValue }}" height="{{ potValue }}"/>
+  <svg width="500" height="500">
+    <defs>
+      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:rgb(164,257,255);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(11,59,81);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <defs>
+      <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="{{ potValue }}" style="stop-color:rgb(164,257,255);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(11,59,81);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="175" cy="125" r="105" x="10" y="105" fill="grey" stroke="url(#grad3)" stroke-width="8" stroke-opacity="{{ potValue }}" />
+  </svg>
+
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="-55px" y="-125px"
+  viewBox="0 0 1014 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+  <path fill="none" stroke="url(#grad4)" stroke-width="10" stroke-miterlimit="10" d="M526.5,587.2c112-9.4,199-102.8,199-216.7
+  s-87-207.3-199-216.7" transform = "rotate(40 455 380)" />
+</svg>
+
   {{/with}}
 </svg>
+
+
 </template>

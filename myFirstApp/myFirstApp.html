@@ -1,6 +1,7 @@
 <head>
   <title>myFirstApp</title>
-  <link href='http://fonts.googleapis.com/css?family=Raleway|Open+Sans' rel='stylesheet' type='text/css'></head>
+  <link href='http://fonts.googleapis.com/css?family=Raleway|Open+Sans' rel='stylesheet' type='text/css'>
+</head>
 
 <body>
   <div id="container">
@@ -46,8 +47,9 @@
 
     <defs>
       <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="color:#ff0011;stop-color:rgb(20,186,198);stop-opacity:10" />
         <stop offset="{{ potValue }}" style="stop-color:rgb(155,10,10);stop-opacity:90" />
+        <stop offset="70%" style="stop-color:rgb(255,10,10);stop-opacity:70" />
+        <stop offset="10%" style="color:#ff0011;stop-color:rgb(20,186,198);stop-opacity:10"  />
       </linearGradient>
     </defs>
     <circle cx="175" cy="125" r="105" x="10" y="105" fill="#444444" filter="url(#i1)" stroke="url(#grad3)" stroke-width="4" stroke-opacity="{{ pressureValue }}" />

@@ -1,30 +1,29 @@
 <head>
   <title>myFirstApp</title>
-</head>
+  <link href='http://fonts.googleapis.com/css?family=Raleway|Open+Sans' rel='stylesheet' type='text/css'></head>
 
 <body>
   <div id="container">
-    <h1>Dit is mijn Prototype</h1>
-
+    <h1>Test voor de kookplaat</h1>
+    <p> De waardes vanuit de Arduino </p>
     {{> hello}}
 
   </div>
+
+
   <div id="svgTest">
     {{> svgtest}}
   </div>
-  <svg width="{{ potValue }}" height="{{ potValue }}">
-    <circle cx="50" cy="50" r="40" x="10" y="10" fill="blue" />
-  </svg>
-
 </body>
 
 
 <template name="hello">
   {{#with arduino}}
-  <p>Potvalue: {{ potValue }}</p>
-  <p>PressureBalue: {{ pressureValue }}</p>
+  <p><strong>Potvalue:</strong> {{ potValue }}</p>
+  <p><strong>PressureBalue:</strong> {{ pressureValue }}</p>
   {{/with}}
 </template>
+
 
 <template name="svgtest">
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -37,7 +36,7 @@
         <stop offset="100%" style="stop-color:rgb(11,59,81);stop-opacity:1" />
       </linearGradient>
       <filter id = "i1">
-        <feGaussianBlur in = "SourceAlpha" stdDeviation = "4" result = "blur1"/>
+        <feGaussianBlur in = "SourceAlpha" stdDeviation = "25" result="blur1" />
         <feSpecularLighting result = "specOut" in = "blur1" specularExponent = "20" lighting-color = "#C6C6C6">
           <fePointLight x = "150" y = "90" z = "140"/>
         </feSpecularLighting>
@@ -47,18 +46,28 @@
 
     <defs>
       <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:rgb(11,59,81);stop-opacity:10" />
-        <stop offset="{{ potValue }}" style="stop-color:rgb(164,257,255);stop-opacity:90" />
+        <stop offset="{{ potValue }}" style="color:#ff0011;stop-color:rgb(11,59,81);stop-opacity:20" />
+        <stop offset="{{ potValue }}" style="stop-color:rgb(164,257,255);stop-opacity:100" />
       </linearGradient>
     </defs>
-    <circle cx="175" cy="125" r="105" x="10" y="105" fill="#444444" filter="url(#i1)" stroke="url(#grad3)" stroke-width="8" stroke-opacity="{{ pressureValue }}"  />
+    <circle cx="175" cy="125" r="105" x="10" y="105" fill="#444444" filter="url(#i1)" stroke="url(#grad3)" stroke-width="4" stroke-opacity="{{ pressureValue }}" />
   </svg>
 
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="-55px" y="-125px"
-  viewBox="0 0 1014 768" enable-background="new 0 0 1024 768" xml:space="preserve">
-  <path fill="none" stroke="url(#grad4)" stroke-width="10" stroke-miterlimit="10" d="M526.5,587.2c112-9.4,199-102.8,199-216.7
-  s-87-207.3-199-216.7" transform = "rotate(40 455 380)" />
+<svg width="500" height="500" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 640 480" enable-background="new 0 0 640 480" xml:space="preserve" transform = "rotate(5 1350 10)" >
+<g>
+  <g>
+    <path fill="none" stroke="url(#grad4)" stroke-width="8.5039" stroke-miterlimit="20" d="M417,168.8c0.1,0.5,0.2,0.9,0.3,1.4"/>
+    <path fill="none" stroke="url(#grad4)" stroke-width="8.5039" stroke-miterlimit="20" stroke-dasharray="0,0,9.854111e-03,5.5767" d="
+    M417.3,170.2c0.1,0.6,0.2,1.2,0.3,1.8"/>
+
+    <path fill="none" stroke="url(#grad4)" stroke-width="8.5039" stroke-miterlimit="20" stroke-dasharray="2.7933,0,0,0,9.854111e-03,5.5767" d="
+    M418.3,175.7c5.3,34-1.5,74.2-21.6,112.1c-23.3,44.1-59.3,75.2-95.8,87.2"/>
+    <path fill="none" stroke="url(#grad4)" stroke-width="8.5039" stroke-miterlimit="20" d="M298.3,375.8c-0.5,0.1-0.9,0.3-1.4,0.4"/>
+  </g>
+</g>
 </svg>
+
 
   {{/with}}
 </svg>

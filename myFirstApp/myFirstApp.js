@@ -14,6 +14,7 @@ if (Meteor.isClient) {
     },
   });
 
+
   Template.svgtest.helpers({
     arduino: function () {
       var value = messageCollection.findOne({name:'messages'});

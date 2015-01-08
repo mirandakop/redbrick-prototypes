@@ -12,7 +12,16 @@ if (Meteor.isClient) {
 		console.log('message: '+value);
 		return value;
     },
+
+    valueHelper:function(value) {
+      value = value/1024;
+
+      return value;
+    }
+
   });
+
+
 
 
   Template.svgtest.helpers({

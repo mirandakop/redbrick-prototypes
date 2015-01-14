@@ -21,7 +21,7 @@
 <template name="hello">
   {{#with arduino}}
   <p><strong>Potvalue:</strong> {{ valueHelper potValue }}</p>
-  <p><strong>PressureBalue:</strong> {{ pressureValue }}</p>
+  <p><strong>PressureValue:</strong> {{ pressureValue }}</p>
   {{/with}}
 </template>
 
@@ -44,12 +44,13 @@
         <feComposite in = "SourceGraphic" in2 = "specOut" operator = "arithmetic" k1 = "0" k2 = "1" k3 = "1" k4 = "0"/>
     </filter>
     </defs>
-
     <defs>
       <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="{{ potValue }}" style="stop-color:rgb(155,10,10);stop-opacity:90" />
-        <stop offset="40%" style="opacity:10;stop-color:rgb(255,10,10);stop-opacity:80" />
-        <stop offset="10%" style="color:#ff0011;stop-color:rgb(20,186,198);stop-opacity:10"  />
+        <stop offset="{{ potValue }}" style="stop-color:rgb(155,10,10);" />
+        <stop offset="{{ potValueOne }}" style="stop-color:rgb(255,10,10):" />
+        <stop offset="{{ potValueTwo }}" style="stop-color:rgb(155,20,10):" />
+        <stop offset="{{ potValueThree }}" style="stop-color:rgb(55,60,10):" />
+        <stop offset="{{ potValueFour }}" style="color:#ff0011;stop-color:rgb(20,186,198);stop-opacity:30"  />
       </linearGradient>
     </defs>
     <circle cx="175" cy="125" r="105" x="10" y="105" fill="#444444" filter="url(#i1)" stroke="url(#grad3)" stroke-width="4" stroke-opacity="{{ pressureValue }}" />
@@ -66,8 +67,124 @@ viewBox="0 0 640 480" enable-background="new 0 0 640 480" xml:space="preserve" t
     M419.1,182.1c4.2,38.3-6.4,77.5-25.2,110.8c-18.4,32.6-45.7,61.4-80.1,77c-2.6,1.2-5.3,2.3-8,3.3"/>
   </g>
 </g>
-</svg>
 
+</svg>
+svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 283.4 212.6" enable-background="new 0 0 283.4 212.6" xml:space="preserve">
+<g id="Layer_0__x2B__Layer_1__x2B__Layer_2__x2B__tijdklaar__x2B__temperatuur_xA0_Image_1_">
+  <rect x="0" y="0" fill="#111111" width="283.4" height="212.6"/>
+  <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="76.9169" y1="43.8769" x2="76.9169" y2="117.5435">
+    <stop  offset="0" style="stop-color:#FFFFFF"/>
+    <stop  offset="1" style="stop-color:#D3D3D3"/>
+  </linearGradient>
+  <circle fill="url(#SVGID_1_)" cx="76.9" cy="80.7" r="36.8"/>
+  <line fill="none" stroke="#5E5E5E" stroke-width="2.2677" stroke-miterlimit="10" x1="171.3" y1="0" x2="171.3" y2="156.7"/>
+  <line fill="none" stroke="#5E5E5E" stroke-width="2.2677" stroke-miterlimit="10" x1="-1.2" y1="156.7" x2="283.4" y2="156.7"/>
+  <circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="20.9" cy="9.3" r="3.5"/>
+  <circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="20.9" cy="19.3" r="3.5"/>
+  <circle fill="#5E5E5E" cx="11.2" cy="9.3" r="3.5"/>
+  <circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="11.2" cy="19.3" r="3.5"/>
+</g>
+<g id="pan_2_">
+  <g id="pan_3_">
+    <g id="_x36_5__xB0_C_x0D_">
+      <text transform="matrix(1 0 0 1 63.4778 135.6002)" fill="#8B8B89" font-family="'OpenSans'" font-size="10">65 °C</text>
+    </g>
+    <g id="MIN">
+      <text transform="matrix(1 0 0 1 32.0424 113.0558)" fill="#8B8B89" font-family="'OpenSans-Semibold'" font-size="5.851">MIN</text>
+    </g>
+    <g id="MAX">
+      <text transform="matrix(1 0 0 1 106.5176 113.08)" fill="#8B8B89" font-family="'OpenSans-Semibold'" font-size="5.851">MAX</text>
+    </g>
+    <g id="Shape_7_copy_12__x2B__color_xA0_Image_1_">
+      <path fill="#363636" d="M126,78.3C126,50.5,103.5,28,75.7,28C48,28,25.4,50.5,25.4,78.3c0,8.9,2.3,17.3,6.4,24.5l0,0
+      c0.7,1.3,2.2,1.8,3.5,1.2c1.3-0.6,1.8-2.2,1.1-3.5l-1.4,0.7l1.4-0.7c-3.7-6.6-5.9-14.2-5.9-22.3C30.6,53.2,50.8,33,75.7,33
+      c24.9,0,45.2,20.2,45.2,45.2c0,8-2.2,15.8-5.9,22.3l0,0c0,0,0,0,0,0c0,0,0,0,0,0.1l0,0c-0.6,1.3,0,2.8,1.2,3.4
+      c1.3,0.6,2.9,0.1,3.5-1.2l0,0C123.7,95.5,126,87.1,126,78.3z"/>
+      <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="25.4401" y1="66.0905" x2="102.3371" y2="66.0905">
+        <stop  offset="0" style="stop-color:#5ED0EF"/>
+        <stop  offset="0.3373" style="stop-color:#005C94"/>
+        <stop  offset="0.5883" style="stop-color:#C3302D"/>
+        <stop  offset="1" style="stop-color:#590400"/>
+      </linearGradient>
+      <path fill="url(#SVGID_2_)" d="M101.2,35L101.2,35L101.2,35c-0.5-0.3-0.2-0.2-0.8-0.5C93.2,30.3,84.7,28,75.7,28
+      C48,28,25.4,50.5,25.4,78.3c0,8.9,2.3,17.3,6.4,24.5l0,0c0.7,1.3,2.2,1.8,3.5,1.2c1.3-0.6,1.8-2.2,1.1-3.5l-1.4,0.7l1.4-0.7
+      c-3.7-6.6-5.9-14.2-5.9-22.3C30.6,53.2,50.8,33,75.7,33c8.1,0,15.7,2.1,22.3,5.9l0.4,0.2l0,0c0.1,0.1,0.3,0.2,0.5,0.3l0,0l0,0
+      c1.1,0.5,2.4,0.2,3.1-0.8C102.7,37.4,102.4,35.8,101.2,35z"/>
+    </g>
+    <g id="Shape_7_copy_10_xA0_Image_1_">
+      <path fill="#363636" d="M265.8,186.4H17.6c-1.6,0-2.8-1.3-2.8-2.8v0c0-1.6,1.3-2.8,2.8-2.8h248.1c1.6,0,2.8,1.3,2.8,2.8v0
+      C268.6,185.1,267.3,186.4,265.8,186.4z"/>
+      <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="14.816" y1="183.6155" x2="203.2861" y2="183.6155">
+        <stop  offset="0" style="stop-color:#5ED0EF"/>
+        <stop  offset="1" style="stop-color:#C3302D"/>
+      </linearGradient>
+      <path fill="url(#SVGID_3_)" d="M200.6,186.5H17.5c-1.5,0-2.7-1.2-2.7-2.7v-0.5c0-1.5,1.2-2.7,2.7-2.7h183.1
+      c1.5,0,2.7,1.2,2.7,2.7v0.5C203.3,185.3,202.1,186.5,200.6,186.5z"/>
+      <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="197.864" y1="177.9365" x2="206.4347" y2="188.1506">
+        <stop  offset="0" style="stop-color:#F1F1F1"/>
+        <stop  offset="0.6163" style="stop-color:#D3D3D3"/>
+        <stop  offset="1" style="stop-color:#A2A2A2"/>
+      </linearGradient>
+      <circle fill="url(#SVGID_4_)" cx="202.1" cy="183" r="6.7"/>
+    </g>
+  </g>
+  <g id="Gewicht_1_">
+    <g id="_x32_74_g">
+      <text transform="matrix(1 0 0 1 133.2556 135.6002)" fill="#8B8B89" font-family="'OpenSans'" font-size="10">274 g</text>
+      <text transform="matrix(1 0 0 1 182.2092 135.6)"><tspan x="0" y="0" fill="#8B8B89" font-family="'OpenSans'" font-size="10">Tijd klaar: </tspan><tspan x="56.3" y="0" fill="#8B8B89" font-family="'OpenSans-Bold'" font-size="10">17.46</tspan><tspan x="82" y="0" fill="#8B8B89" font-family="'OpenSans'" font-size="10"> </tspan><tspan x="84.6" y="0" fill="#8B8B89" font-family="'OpenSans'" font-size="5.9528">uur</tspan></text>
+      <g>
+        <path fill="#8B8B89" d="M211.2,64.8h-1.1v-6.7c0-0.6,0-1.1,0.1-1.6c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.7,0.5-1.6,1.2l-0.6-0.7
+        l2.6-1.9h0.9V64.8z"/>
+        <path fill="#8B8B89" d="M218.2,59.1c1,0,1.9,0.2,2.5,0.7c0.6,0.5,0.9,1.2,0.9,2c0,1-0.3,1.7-1,2.3c-0.7,0.6-1.5,0.8-2.7,0.8
+        c-1.1,0-2-0.2-2.5-0.5v-1c0.3,0.2,0.7,0.3,1.2,0.5c0.5,0.1,0.9,0.2,1.4,0.2c0.8,0,1.4-0.2,1.8-0.5c0.4-0.4,0.7-0.9,0.7-1.5
+        c0-1.3-0.8-2-2.5-2c-0.4,0-1,0.1-1.7,0.2l-0.6-0.4l0.4-4.4h4.9v1h-4l-0.2,2.8C217.2,59.1,217.7,59.1,218.2,59.1z"/>
+        <path fill="#8B8B89" d="M227.4,58.4c0-0.6,0.3-0.9,0.8-0.9c0.6,0,0.8,0.3,0.8,0.9c0,0.3-0.1,0.5-0.2,0.6
+        c-0.1,0.1-0.4,0.2-0.6,0.2c-0.2,0-0.4-0.1-0.6-0.2C227.4,59,227.4,58.7,227.4,58.4z M227.4,64.1c0-0.3,0.1-0.5,0.2-0.7
+        c0.1-0.1,0.3-0.2,0.6-0.2c0.3,0,0.5,0.1,0.6,0.2c0.1,0.1,0.2,0.4,0.2,0.7c0,0.3-0.1,0.5-0.2,0.6c-0.1,0.1-0.4,0.2-0.6,0.2
+        c-0.2,0-0.4-0.1-0.6-0.2C227.4,64.6,227.4,64.4,227.4,64.1z"/>
+        <path fill="#8B8B89" d="M241.2,60.1c0,1.6-0.3,2.8-0.8,3.6c-0.5,0.8-1.4,1.2-2.5,1.2c-1.1,0-1.9-0.4-2.4-1.2
+        c-0.6-0.8-0.8-2-0.8-3.6c0-1.6,0.3-2.8,0.8-3.6c0.5-0.8,1.4-1.2,2.5-1.2c1.1,0,1.9,0.4,2.4,1.2
+        C240.9,57.3,241.2,58.5,241.2,60.1z M235.8,60.1c0,1.4,0.2,2.4,0.5,3c0.3,0.6,0.9,0.9,1.6,0.9c0.7,0,1.3-0.3,1.6-0.9
+        c0.3-0.6,0.5-1.6,0.5-3c0-1.3-0.2-2.3-0.5-3c-0.3-0.6-0.9-0.9-1.6-0.9c-0.7,0-1.3,0.3-1.6,0.9C235.9,57.7,235.8,58.7,235.8,60.1
+        z"/>
+        <path fill="#8B8B89" d="M249.3,60.1c0,1.6-0.3,2.8-0.8,3.6c-0.5,0.8-1.4,1.2-2.5,1.2c-1.1,0-1.9-0.4-2.4-1.2
+        c-0.6-0.8-0.8-2-0.8-3.6c0-1.6,0.3-2.8,0.8-3.6c0.5-0.8,1.4-1.2,2.5-1.2c1.1,0,1.9,0.4,2.4,1.2C249,57.3,249.3,58.5,249.3,60.1z
+        M243.8,60.1c0,1.4,0.2,2.4,0.5,3c0.3,0.6,0.9,0.9,1.6,0.9c0.7,0,1.3-0.3,1.6-0.9c0.3-0.6,0.5-1.6,0.5-3c0-1.3-0.2-2.3-0.5-3
+        c-0.3-0.6-0.9-0.9-1.6-0.9c-0.7,0-1.3,0.3-1.6,0.9C244,57.7,243.8,58.7,243.8,60.1z"/>
+      </g>
+      <line fill="none" stroke="#5E5E5E" stroke-width="0.8504" stroke-miterlimit="10" x1="214.8" y1="25.7" x2="214.8" y2="39.7"/>
+      <line fill="none" stroke="#5E5E5E" stroke-width="0.8504" stroke-miterlimit="10" x1="207.9" y1="32.7" x2="221.6" y2="32.7"/>
+      <line fill="none" stroke="#5E5E5E" stroke-width="0.8504" stroke-miterlimit="10" x1="242.7" y1="25.7" x2="242.7" y2="39.7"/>
+      <line fill="none" stroke="#5E5E5E" stroke-width="0.8504" stroke-miterlimit="10" x1="235.8" y1="32.7" x2="249.6" y2="32.7"/>
+      <line fill="none" stroke="#5E5E5E" stroke-width="0.8504" stroke-miterlimit="10" x1="208.1" y1="88" x2="221.9" y2="88"/>
+      <line fill="none" stroke="#5E5E5E" stroke-width="0.8504" stroke-miterlimit="10" x1="236.1" y1="88" x2="249.8" y2="88"/>
+    </g>
+    <g id="light_copy_3__x2B__color_xA0_Image_1_">
+      <path fill="#363636" d="M146.5,116.5L146.5,116.5c-1.7,0-3.1-1.4-3.1-3.1V32c0-1.7,1.4-3.1,3.1-3.1l0,0c1.7,0,3.1,1.4,3.1,3.1
+      v81.5C149.6,115.1,148.2,116.5,146.5,116.5z"/>
+      <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="146.4528" y1="117.2102" x2="146.4528" y2="56.9028">
+        <stop  offset="0" style="stop-color:#3DC3EE"/>
+        <stop  offset="0.5327" style="stop-color:#2CB0A7"/>
+        <stop  offset="1" style="stop-color:#1D9F69"/>
+      </linearGradient>
+      <path fill="url(#SVGID_5_)" d="M147.2,117.2h-1.5c-1.3,0-2.4-1.1-2.4-2.4V59.3c0-1.3,1.1-2.4,2.4-2.4h1.5c1.3,0,2.4,1.1,2.4,2.4
+      v55.5C149.6,116.1,148.5,117.2,147.2,117.2z"/>
+    </g>
+  </g>
+  <g id="positie_1_">
+    <g id="Layer_14_xA0_Image_1_">
+    </g>
+    <g id="Layer_15_xA0_Image_1_">
+    </g>
+    <g id="Layer_4_copy_xA0_Image_1_">
+    </g>
+    <g id="Layer_4_copy_2_xA0_Image_1_">
+    </g>
+  </g>
+</g>
+</svg>
 
   {{/with}}
 </svg>

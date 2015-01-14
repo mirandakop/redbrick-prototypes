@@ -9,7 +9,7 @@ if (Meteor.isClient) {
     arduino: function () {
 
 		var value = messageCollection.findOne({name:'messages'});
-		console.log('message: '+value);
+	//	console.log('message: '+value);
 		return value;
     },
 
@@ -17,7 +17,14 @@ if (Meteor.isClient) {
       value = value/1024;
 
       return value;
+
+      potvalue = value/1024 ('stop-opacity:100');
+      potvalueOne = value/824 ('stop-opacity:80');
+      potvalueTwo = value/424 ('stop-opacity:40');
+      potvalueThree = value/224 ('stop-opacity:20');
+      potvalueFour = value/0 ('stop-opacity:0');
     }
+
 
   });
 
@@ -86,7 +93,7 @@ if (Meteor.isServer) {
 		  {
           'pressureValue':pressureValue,
           'potValue':potValue,
-			  'name':'messages'
+			     'name':'messages'
         }
       );
 

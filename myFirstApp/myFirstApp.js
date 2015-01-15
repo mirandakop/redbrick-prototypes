@@ -19,7 +19,6 @@ if (Meteor.isClient) {
 
       return value;
 
-
     }
 
   });
@@ -33,6 +32,7 @@ if (Meteor.isClient) {
       return value;
     }
   });
+
 
   // Template.hello.events({
   //   'click button': function () {

@@ -15,11 +15,12 @@ if (Meteor.isClient) {
 
     valueHelper:function(value) {
 
-      value = value/1024;
-
+      value = value/1023;
       return value;
 
-    }
+    },
+
+
 
   });
 
@@ -30,6 +31,14 @@ if (Meteor.isClient) {
       var value = messageCollection.findOne({name:'messages'});
       console.log('message: '+value);
       return value;
+    },
+
+    valueOffset:function(value) {
+
+      value = value/1023; // normaliseren
+      var percentage = Math.round(value *100); // omreken naar percentage 0 - 100
+      return {offset:percentage+'%'}; // maak een offset met dit percentage
+
     }
   });
 

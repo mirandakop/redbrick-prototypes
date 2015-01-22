@@ -1,55 +1,51 @@
 <head>
   <title>myFirstApp</title>
   <link href='http://fonts.googleapis.com/css?family=Raleway|Open+Sans' rel='stylesheet' type='text/css'>
-  <script>
-  jQuery(document).ready(function(){
-    // This button will increment the value
-    $('.qtyplus').click(function(e){
-      // Stop acting like a button
-      e.preventDefault();
-      // Get the field name
-      fieldName = $(this).attr('field');
-      // Get its current value
-      var currentVal = parseInt($('input[name='+fieldName+']').val());
-      // If is not undefined
-      if (!isNaN(currentVal)) {
-        // Increment
-        $('input[name='+fieldName+']').val(currentVal + 1);
-      } else {
-        // Otherwise put a 0 there
-        $('input[name='+fieldName+']').val(0);
-      }
-    });
-    // This button will decrement the value till 0
-    $(".qtyminus").click(function(e) {
-      // Stop acting like a button
-      e.preventDefault();
-      // Get the field name
-      fieldName = $(this).attr('field');
-      // Get its current value
-      var currentVal = parseInt($('input[name='+fieldName+']').val());
-      // If it isn't undefined or its greater than 0
-      if (!isNaN(currentVal) && currentVal > 0) {
-        // Decrement one
-        $('input[name='+fieldName+']').val(currentVal - 1);
-      } else {
-        // Otherwise put a 0 there
-        $('input[name='+fieldName+']').val(0);
-      }
-    });
+<script>
+jQuery(document).ready(function(){
+  // This button will increment the value
+  $('.qtyplus').click(function(e){
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name='+fieldName+']').val());
+    // If is not undefined
+    if (!isNaN(currentVal)) {
+      // Increment
+      $('input[name='+fieldName+']').val(currentVal + 1);
+    } else {
+      // Otherwise put a 0 there
+      $('input[name='+fieldName+']').val(0);
+    }
   });
-  </script>
+  // This button will decrement the value till 0
+  $(".qtyminus").click(function(e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name='+fieldName+']').val());
+    // If it isn't undefined or its greater than 0
+    if (!isNaN(currentVal) && currentVal > 0) {
+      // Decrement one
+      $('input[name='+fieldName+']').val(currentVal - 1);
+    } else {
+      // Otherwise put a 0 there
+      $('input[name='+fieldName+']').val(0);
+    }
+  });
+});
+
+</script>
 </head>
 
 <body>
 
 
 
-  <form id='myform' method='POST' action='#'>
-    <input type='button' value='-' class='qtyminus' field='quantity' />
-    <input type='text' name='quantity' value='0' class='qty' />
-    <input type='button' value='+' class='qtyplus' field='quantity' />
-  </form>
 
 
   <div id="container">
@@ -64,6 +60,12 @@
     {{> svgtest}}
   </div>
 
+
+  <form id='myform' method='POST' action='#'>
+    <input type='button' value='-' class='qtyminus' field='quantity' />
+    <input type='text' name='quantity' value='0' class='qty' />
+    <input type='button' value='+' class='qtyplus' field='quantity' />
+  </form>
 
 </body>
 
@@ -82,6 +84,8 @@
 <svg version="1.1" id="Kookplaat_xA0_Image_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 x="0px" y="0px" viewBox="0 0 1559 1567.4" enable-background="new 0 0 1559 1567.4" xml:space="preserve">
 {{#with arduino}}
+
+
 <rect x="1.9" y="0" width="1558.1" height="1567.6"/>
 <text transform="matrix(1 0 0 1 742 788)" font-family="'MyriadPro-Regular'" font-size="12"></text>
 <line fill="none" stroke="#919191" stroke-miterlimit="10" x1="1601.3" y1="1351.7" x2="3160.4" y2="1351.7"/>
@@ -99,15 +103,10 @@ c0.8,1.6,2.8,2.3,4.5,1.5c1.6-0.8,2.3-2.8,1.4-4.5l-1.8,0.9l1.8-0.9c-4.8-8.4-7.5-1
 c31.8,0,57.6,25.8,57.6,57.6c0,10.3-2.8,20.1-7.5,28.5l0,0c0,0,0,0,0,0.1c0,0,0,0,0,0.1l0,0c-0.7,1.6,0,3.6,1.6,4.4
 c1.6,0.8,3.6,0.1,4.5-1.6l0,0C258.8,1454.4,261.7,1443.8,261.7,1432.5z"/>
 <circle fill="#5E5E5E" cx="197.6" cy="1433.5" r="44.2"/>
-<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="226.32" y1="1376.4838" x2="233.6051" y2="1385.1658">
-  <stop  offset="0" style="stop-color:#D6D6D6"/>
-  <stop  offset="0.1858" style="stop-color:#D3D3D3"/>
-  <stop  offset="1" style="stop-color:#A2A2A2"/>
-</linearGradient>
-<circle fill="url(#SVGID_2_)" cx="230" cy="1380.8" r="5.7"/>
+
 <g>
-  <polygon offset="{{ pressureValue }}" fill="#13A6DC" points="136.4,1554.5 134.1,1554.5 134.1,1549.9 136.4,1548.6 	"/>
-  <polygon offset="{{ pressureValue }}" fill="#13A6DC" points="141.1,1554.5 138.8,1554.5 138.8,1549.6 141.1,1548.3 	"/>
+  <polygon offset="{{ potValue }}" fill="#13A6DC" points="136.4,1554.5 134.1,1554.5 134.1,1549.9 136.4,1548.6 	"/>
+  <polygon offset="{{ potValue }}" fill="#13A6DC" points="141.1,1554.5 138.8,1554.5 138.8,1549.6 141.1,1548.3 	"/>
   <polygon fill="#13A6DC" points="145.2,1554.5 142.9,1554.5 142.9,1549.3 145.2,1548 	"/>
   <polygon fill="#13A6DC" points="149.9,1554.5 147.6,1554.5 147.6,1548.8 149.9,1547.5 	"/>
   <polygon fill="#13A6DC" points="154.6,1554.5 152.3,1554.5 152.3,1548.3 154.6,1547 	"/>
@@ -140,10 +139,10 @@ c1.6,0.8,3.6,0.1,4.5-1.6l0,0C258.8,1454.4,261.7,1443.8,261.7,1432.5z"/>
 <circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="19.9" cy="1376" r="3.5"/>
 <circle fill="#5E5E5E" cx="10.3" cy="1366" r="3.5"/>
 <circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="10.3" cy="1376" r="3.5"/>
-<polygon fill="#5E5E5E" points="27,1392.8 33.5,1399.8 20.6,1399.8 "/>
-<polygon fill="#5E5E5E" points="81.9,1392.8 88.4,1399.8 75.5,1399.8 "/>
-<polygon fill="#5E5E5E" points="82,1470.9 75.5,1463.9 88.4,1463.9 "/>
-<polygon fill="#5E5E5E" points="27.1,1470.9 20.6,1463.9 33.5,1463.9 "/>
+<a xlink:href="/svg/index.html" ><polygon fill="#5E5E5E" points="27,1392.8 33.5,1399.8 20.6,1399.8 "/> </a>
+<a xlink:href="/svg/index.html" ><polygon fill="#5E5E5E" points="81.9,1392.8 88.4,1399.8 75.5,1399.8 "/> </a>
+<a xlink:href="/svg/index.html" ><polygon fill="#5E5E5E" points="82,1470.9 75.5,1463.9 88.4,1463.9 "/> </a>
+<a xlink:href="/svg/index.html" ><polygon fill="#5E5E5E" points="27.1,1470.9 20.6,1463.9 33.5,1463.9 "/> </a>
 <line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="112.4" y1="1567.4" x2="112.4" y2="1354.6"/>
 <line fill="none" stroke="#5E5E5E" stroke-width="2.5512" stroke-miterlimit="10" x1="283.2" y1="1566.8" x2="283.2" y2="1353.9"/>
 <line fill="none" stroke="#5E5E5E" stroke-width="2.5512" stroke-miterlimit="10" x1="566.2" y1="1566.8" x2="566.2" y2="1353.9"/>
@@ -160,26 +159,36 @@ c1.6,0.8,3.6,0.1,4.5-1.6l0,0C258.8,1454.4,261.7,1443.8,261.7,1432.5z"/>
 <circle fill="none" stroke="#5E5E5E" stroke-miterlimit="10" cx="1285.8" cy="1365.5" r="3.5"/>
 <circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1285.8" cy="1375.5" r="3.5"/>
 <text transform="matrix(1 0 0 1 134.0838 1520.4802)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Open Sans'" font-size="11.3386">243 g </tspan><tspan x="31.6" y="0" fill="#5E5E5E" font-family="'Open Sans'" font-size="11.3386">/ 475 g</tspan></text>
-<text transform="matrix(1 0 0 1 142.0826 1475.4451)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MIN</text>
-<text transform="matrix(1 0 0 1 236.3411 1475.4692)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MAX</text>
+<text transform="matrix(1 0 0 1 142.0826 1475.4451)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MIN</text>
+<text transform="matrix(1 0 0 1 236.3411 1475.4692)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MAX</text>
 <text transform="matrix(1 0 0 1 18.4887 1537.2662)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">17 . 22</text>
-<text transform="matrix(1 0 0 1 18.4888 1439.4802)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">09 . 32</text>
+
+<form id='myform' method='POST' action='#'>
+  <input transform="matrix(1 0 0 1 15.4888 1439.4802)" type='button' value='-' class='qtyminus' field='quantity' />
+  <input transform="matrix(1 0 0 1 58.4888 1439.4812)" type='text' name='quantity' value='0' class='qty' />
+  <input transform="matrix(1 0 0 1 70.4888 1439.4822)" type='button' value='+' class='qtyplus' field='quantity' />
+</form>
+
+
 <line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="97" y1="1495.4" x2="13.8" y2="1495.4"/>
 <line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="227" y1="1382.5" x2="230.7" y2="1377.3"/>
 <line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="229.1" y1="1383.9" x2="232.8" y2="1378.7"/>
 <rect x="993.4" y="1354" fill="#111111" width="282.3" height="212.6"/>
 <line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="1106.4" y1="1494.4" x2="1275.2" y2="1494.4"/>
-
-<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="1127.465" y1="1416.9651" x2="1225.5436" y2="1416.9651">
-  <stop {{ valueOffset potValue }} offset="0" style="stop-color:#5ED0EF"/>
-  <stop {{ valueOffset potValue }} offset="0.3373" style="stop-color:#005C94"/>
-  <stop {{ valueOffset potValue }} offset="0.5883" style="stop-color:#C3302D"/>
-  <stop {{ valueOffset potValue }} offset="1" style="stop-color:#590400"/>
-</linearGradient>
-<path fill="url(#SVGID_3_)" d="M1255.7,1432.5c0-35.4-28.7-64.1-64.1-64.1s-64.1,28.7-64.1,64.1c0,11.4,3,22,8.1,31.3l0,0
+<path fill="#363636" d="M1255.7,1432.5c0-35.4-28.7-64.1-64.1-64.1s-64.1,28.7-64.1,64.1c0,11.4,3,22,8.1,31.3l0,0
 c0.8,1.6,2.8,2.3,4.5,1.5c1.6-0.8,2.3-2.8,1.4-4.5l-1.8,0.9l1.8-0.9c-4.8-8.4-7.5-18.1-7.5-28.4c0-31.8,25.8-57.6,57.6-57.6
 s57.6,25.8,57.6,57.6c0,10.3-2.8,20.1-7.5,28.5l0,0c0,0,0,0,0,0.1c0,0,0,0,0,0.1l0,0c-0.7,1.6,0,3.6,1.6,4.4
 c1.6,0.8,3.6,0.1,4.5-1.6l0,0C1252.8,1454.4,1255.7,1443.8,1255.7,1432.5z"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="1127.465" y1="1416.9651" x2="1225.5436" y2="1416.9651">
+  <stop  offset="0" style="stop-color:#5ED0EF"/>
+  <stop  offset="0.3373" style="stop-color:#005C94"/>
+  <stop  offset="0.5883" style="stop-color:#C3302D"/>
+  <stop  offset="1" style="stop-color:#590400"/>
+</linearGradient>
+<path fill="url(#SVGID_3_)" d="M1224.1,1377.3L1224.1,1377.3L1224.1,1377.3c-0.6-0.4-0.3-0.3-1-0.7c-9.3-5.3-20.1-8.3-31.6-8.3
+c-35.4,0-64.1,28.7-64.1,64.1c0,11.4,3,22,8.1,31.3l0,0c0.8,1.6,2.8,2.3,4.5,1.5c1.6-0.8,2.3-2.8,1.4-4.5l-1.8,0.9l1.8-0.9
+c-4.8-8.4-7.5-18.1-7.5-28.4c0-31.8,25.8-57.6,57.6-57.6c10.3,0,20,2.7,28.4,7.5l0.5,0.3l0,0c0.2,0.1,0.4,0.2,0.6,0.3l0,0l0,0
+c1.4,0.6,3.1,0.2,3.9-1C1226,1380.4,1225.6,1378.4,1224.1,1377.3z"/>
 <circle fill="#5E5E5E" cx="1191.6" cy="1433.5" r="44.2"/>
 <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1220.3199" y1="1376.4838" x2="1227.6051" y2="1385.1658">
   <stop  offset="0" style="stop-color:#D6D6D6"/>
@@ -228,8 +237,8 @@ c1.6,0.8,3.6,0.1,4.5-1.6l0,0C1252.8,1454.4,1255.7,1443.8,1255.7,1432.5z"/>
 <polygon fill="#5E5E5E" points="1021.1,1470.9 1014.6,1463.9 1027.5,1463.9 "/>
 <line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="1106.4" y1="1567.4" x2="1106.4" y2="1352.6"/>
 <text transform="matrix(1 0 0 1 1128.0837 1520.4801)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Open Sans'" font-size="11.3386">243 g </tspan><tspan x="31.6" y="0" fill="#5E5E5E" font-family="'Open Sans'" font-size="11.3386">/ 475 g</tspan></text>
-<text transform="matrix(1 0 0 1 1136.0826 1475.4451)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MIN</text>
-<text transform="matrix(1 0 0 1 1230.3411 1475.4691)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MAX</text>
+<text transform="matrix(1 0 0 1 1136.0826 1475.4451)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MIN</text>
+<text transform="matrix(1 0 0 1 1230.3411 1475.4691)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MAX</text>
 <text transform="matrix(1 0 0 1 1012.4886 1537.2661)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">17 . 22</text>
 <text transform="matrix(1 0 0 1 1012.4887 1439.4802)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">09 . 32</text>
 <line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="1091" y1="1495.4" x2="1007.8" y2="1495.4"/>
@@ -298,24 +307,24 @@ C905.3,1371.3,904.2,1372.4,902.8,1372.4z"/>
 <radialGradient id="SVGID_8_" cx="1182.3425" cy="357.4075" r="179.1048" gradientUnits="userSpaceOnUse">
   <stop  offset="0" style="stop-color:#0A0A0A"/>
   <stop  offset="9.221471e-02" style="stop-color:#A00D0D"/>
-  <stop  offset="0.1732" style="stop-color:#B70A0A"/>
-  <stop  offset="0.2318" style="stop-color:#510808"/>
-  <stop  offset="0.3" style="stop-color:#AE0B0B"/>
-  <stop  offset="0.3437" style="stop-color:#870A0A"/>
-  <stop  offset="0.3638" style="stop-color:#AF0B0B"/>
-  <stop  offset="0.3823" style="stop-color:#740C0C"/>
-  <stop  offset="0.4046" style="stop-color:#A00B0B"/>
-  <stop  offset="0.4371" style="stop-color:#690C0C"/>
-  <stop  offset="0.462" style="stop-color:#860A0A"/>
-  <stop  offset="0.512" style="stop-color:#820A0A"/>
-  <stop  offset="0.5443" style="stop-color:#720C0C"/>
-  <stop  offset="0.5756" style="stop-color:#9A0A0A"/>
-  <stop  offset="0.6115" style="stop-color:#AE0B0B"/>
-  <stop  offset="0.6615" style="stop-color:#560606"/>
-  <stop  offset="0.7295" style="stop-color:#AE0B0B"/>
-  <stop  offset="0.7949" style="stop-color:#AD0B0B"/>
-  <stop  offset="0.8466" style="stop-color:#8B0A0A"/>
-  <stop  offset="0.8813" style="stop-color:#580606"/>
+  <stop  offset="0.0732" style="stop-color:#B70A0A"/>
+  <stop  offset="0.0318" style="stop-color:#510808"/>
+  <stop  offset="0.1" style="stop-color:#AE0B0B"/>
+  <stop  offset="0.1437" style="stop-color:#870A0A"/>
+  <stop  offset="0.1638" style="stop-color:#AF0B0B"/>
+  <stop  offset="0.1823" style="stop-color:#740C0C"/>
+  <stop  offset="0.2046" style="stop-color:#A00B0B"/>
+  <stop  offset="0.2371" style="stop-color:#690C0C"/>
+  <stop  offset="0.262" style="stop-color:#860A0A"/>
+  <stop  offset="0.312" style="stop-color:#820A0A"/>
+  <stop  offset="0.3443" style="stop-color:#720C0C"/>
+  <stop  offset="0.3756" style="stop-color:#9A0A0A"/>
+  <stop  offset="0.4115" style="stop-color:#AE0B0B"/>
+  <stop  offset="0.4615" style="stop-color:#560606"/>
+  <stop  offset="0.4295" style="stop-color:#AE0B0B"/>
+  <stop  offset="0.4949" style="stop-color:#AD0B0B"/>
+  <stop  offset="0.5466" style="stop-color:#8B0A0A;stop-opacity:0.2;"/>
+  <stop  offset="0.5813" style="stop-color:#580606;stop-opacity:0.2;"/>
   <stop  offset="1" style="stop-color:#000000"/>
 </radialGradient>
 <circle fill="url(#SVGID_8_)" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="1182.3" cy="357.4" r="179.1"/>

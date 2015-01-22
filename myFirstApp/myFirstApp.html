@@ -1,51 +1,10 @@
 <head>
   <title>myFirstApp</title>
   <link href='http://fonts.googleapis.com/css?family=Raleway|Open+Sans' rel='stylesheet' type='text/css'>
-<script>
-jQuery(document).ready(function(){
-  // This button will increment the value
-  $('.qtyplus').click(function(e){
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    fieldName = $(this).attr('field');
-    // Get its current value
-    var currentVal = parseInt($('input[name='+fieldName+']').val());
-    // If is not undefined
-    if (!isNaN(currentVal)) {
-      // Increment
-      $('input[name='+fieldName+']').val(currentVal + 1);
-    } else {
-      // Otherwise put a 0 there
-      $('input[name='+fieldName+']').val(0);
-    }
-  });
-  // This button will decrement the value till 0
-  $(".qtyminus").click(function(e) {
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    fieldName = $(this).attr('field');
-    // Get its current value
-    var currentVal = parseInt($('input[name='+fieldName+']').val());
-    // If it isn't undefined or its greater than 0
-    if (!isNaN(currentVal) && currentVal > 0) {
-      // Decrement one
-      $('input[name='+fieldName+']').val(currentVal - 1);
-    } else {
-      // Otherwise put a 0 there
-      $('input[name='+fieldName+']').val(0);
-    }
-  });
-});
 
-</script>
 </head>
 
 <body>
-
-
-
 
 
   <div id="container">
@@ -55,19 +14,41 @@ jQuery(document).ready(function(){
 
   </div>
 
+  <div id="outer">
+    {{> leaderboard}}
+  </div>
+
 
   <div id="svgTest">
     {{> svgtest}}
   </div>
 
 
-  <form id='myform' method='POST' action='#'>
-    <input type='button' value='-' class='qtyminus' field='quantity' />
-    <input type='text' name='quantity' value='0' class='qty' />
-    <input type='button' value='+' class='qtyplus' field='quantity' />
-  </form>
-
 </body>
+
+<template name="leaderboard">
+  <div class="leaderboard">
+    {{#each players}}
+    {{> player}}
+    {{/each}}
+  </div>
+  {{#if selected_name}}
+  <div class="details">
+    <div class="name">{{selected_name}}</div>
+    <input type="button" class="inc" value="Give 5 points" />
+  </div>
+  {{/if}}
+  {{#unless selected_name}}
+  <div class="none">Click a player to select</div>
+  {{/unless}}
+</template>
+<template name="player">
+  <div class="player {{selected}}">
+    <span class="name">{{name}}</span>
+    <span class="score">{{score}}</span>
+  </div>
+</template>
+
 
 
 <template name="hello">
@@ -163,11 +144,6 @@ c1.6,0.8,3.6,0.1,4.5-1.6l0,0C258.8,1454.4,261.7,1443.8,261.7,1432.5z"/>
 <text transform="matrix(1 0 0 1 236.3411 1475.4692)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MAX</text>
 <text transform="matrix(1 0 0 1 18.4887 1537.2662)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">17 . 22</text>
 
-<form id='myform' method='POST' action='#'>
-  <input transform="matrix(1 0 0 1 15.4888 1439.4802)" type='button' value='-' class='qtyminus' field='quantity' />
-  <input transform="matrix(1 0 0 1 58.4888 1439.4812)" type='text' name='quantity' value='0' class='qty' />
-  <input transform="matrix(1 0 0 1 70.4888 1439.4822)" type='button' value='+' class='qtyplus' field='quantity' />
-</form>
 
 
 <line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="97" y1="1495.4" x2="13.8" y2="1495.4"/>
@@ -240,7 +216,9 @@ c1.4,0.6,3.1,0.2,3.9-1C1226,1380.4,1225.6,1378.4,1224.1,1377.3z"/>
 <text transform="matrix(1 0 0 1 1136.0826 1475.4451)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MIN</text>
 <text transform="matrix(1 0 0 1 1230.3411 1475.4691)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MAX</text>
 <text transform="matrix(1 0 0 1 1012.4886 1537.2661)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">17 . 22</text>
+
 <text transform="matrix(1 0 0 1 1012.4887 1439.4802)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">09 . 32</text>
+
 <line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="1091" y1="1495.4" x2="1007.8" y2="1495.4"/>
 <line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="1221" y1="1382.5" x2="1224.7" y2="1377.3"/>
 <line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="1223.1" y1="1383.9" x2="1226.8" y2="1378.7"/>

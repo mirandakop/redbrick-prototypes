@@ -1,7 +1,29 @@
 /* CSS declarations go here
 
+
+1) de onderste ronden knop draggble maken en de tijd om hoog en omlaag kunnen zetten !!
+
 /*#container {width:1280px; height:1024px; background-color:#3A3A3A;} */
 body {font-family: 'Open Sans', sans-serif;}
 h1 {font-size:20px; font-weight:bold;}
 p {font-size:14px; float:left; padding:0px 10px 0px 0px;}
 #svgTest {height:950px;}
+
+
+#myform {
+    text-align: center;
+    padding: 5px;
+    border: 1px dotted #ccc;
+    margin: 2%;
+    float:right;
+    margin-top:3%;
+    z-index:999;
+
+  }
+  .qty {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+  }
+  input.qtyplus { width:25px; height:25px;}
+  input.qtyminus { width:25px; height:25px;}

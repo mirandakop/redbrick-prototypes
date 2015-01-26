@@ -1,3 +1,33 @@
+if (Meteor.isClient) {
+  // teller start op 0
+  Session.setDefault("temperatuur", 0);
+
+  Template.test.helpers({
+    temperatuur: function () {
+      return Session.get("temperatuur");
+    }
+  });
+
+  Template.test.rendered = function() {
+    Meteor.Keybindings.addOne ('q',function () {
+      Session.set("temperatuur",Session.get("temperatuur")+1);
+      console.log("KEYUP OR CLICK");
+    });
+    Meteor.Keybindings.addOne ('a',function () {
+      Session.set("temperatuur",Session.get("temperatuur")-1);
+    });
+
+  };
+}
+
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    // code to run on server at startup
+  });
+}
+
+
+
 messageCollection = new Meteor.Collection('messages');
 
 
@@ -25,7 +55,6 @@ if (Meteor.isClient) {
   });
 
 
-
   Template.svgtest.helpers({
     arduino: function () {
       var value = messageCollection.findOne({name:'messages'});
@@ -39,9 +68,20 @@ if (Meteor.isClient) {
       var percentage = Math.round(value *100); // omreken naar percentage 0 - 100
       return {offset:percentage+'%'}; // maak een offset met dit percentage
 
-    }
+    },
+
+
+
   });
 
+//  Template.newLink.events = {
+//    'keypress input.newLink': function (evt, template) {
+//      if (evt.which === 13) {
+//        var url = template.find(".newLink").value;
+//        // add to database
+//      }
+//    }
+//  };
 
   // Template.hello.events({
   //   'click button': function () {
@@ -49,26 +89,6 @@ if (Meteor.isClient) {
   //     Session.set("counter", Session.get("counter") + 1);
   //   }
   // });
-  //  Template.leaderboard.players = function () {
-  //    return Players.find({}, {sort: {score: -1, name: 1}});
-  //};
-  //Template.leaderboard.selected_name = function () {
-  //    var player = Players.findOne(Session.get("selected_player"));
-  //    return player && player.name;
-  //  };
-  //  Template.player.selected = function () {
-  //    return Session.equals("selected_player", this._id) ? "selected" : '';
-  //};
-  //  Template.leaderboard.events({
-  //    'click input.inc': function () {
-  //      Players.update(Session.get("selected_player"), {$inc: {score: 5}});
-  //    }
-  //  });
-  //  Template.player.events({
-  //    'click': function () {
-  //      Session.set("selected_player", this._id);
-  //    }
-  //  });
 
 }
 

@@ -6,7 +6,6 @@
 
 <body>
 
-  {{> test}}
 
   <div id="container">
     <h1>Test voor de kookplaat</h1>
@@ -21,222 +20,183 @@
 
 </body>
 
-<template name="test">
-  <svg width="100" height="100">
-    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="" />
-  </svg>    
-    Temperatuur: {{temperatuur}}
 
-</template>
 
 <template name="hello">
   {{#with arduino}}
   <p><strong>Potvalue:</strong> {{ valueHelper potValue }}</p>
   <p><strong>PressureValue:</strong> {{ pressureValue }}</p>
+  <p><strong>Temperatuur:</strong> {{temperatuur}} </p>
+  <p><strong>Temperatuur:</strong> {{temperatuurtwee}} </p>
   {{/with}}
 </template>
 
 <template name="svgtest">
 
-
 <svg version="1.1" id="Kookplaat_xA0_Image_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 x="0px" y="0px" viewBox="0 0 1559 1567.4" enable-background="new 0 0 1559 1567.4" xml:space="preserve">
+
 {{#with arduino}}
 
-
-<rect x="1.9" y="0" width="1558.1" height="1567.6"/>
-<text transform="matrix(1 0 0 1 742 788)" font-family="'MyriadPro-Regular'" font-size="12"></text>
-<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="1601.3" y1="1351.7" x2="3160.4" y2="1351.7"/>
-<rect x="-0.6" y="1354" fill="#111111" width="283.4" height="212.6"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="113" y1="1494.4" x2="283.2" y2="1494.4"/>
-
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="133.465" y1="1416.9651" x2="261.7249" y2="1416.9651">
-  <stop {{ valueOffset potValue }} offset="0" style="stop-color:#5ED0EF"/>
+<rect x="-1.6" y="-2.7" width="1562.5" height="1570.2"/>
+<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="847.4" y1="1567.4" x2="847.4" y2="1383.7"/>
+<text transform="matrix(-1 0 0 1 816.4028 788)" font-family="'MyriadPro-Regular'" font-size="12">control_prev</text>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="-42.9" y1="1351.7" x2="-1602" y2="1351.7"/>
+<rect x="1275.6" y="1354" fill="#111111" width="283.4" height="212.6"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="1734.811" y1="1416.9651" x2="1863.0709" y2="1416.9651" gradientTransform="matrix(-1 0 0 1 3159.7483 0)">
+  <stop {{ valueOffset potValue }} offset="0" style="stop-color:#590400 "/>
   <stop {{ valueOffset potValue }} offset="0.3373" style="stop-color:#005C94"/>
   <stop {{ valueOffset potValue }} offset="0.5883" style="stop-color:#C3302D"/>
-  <stop {{ valueOffset potValue }} offset="1" style="stop-color:#590400"/>
-</linearGradient>
-<path fill="url(#SVGID_1_)" d="M261.7,1432.5c0-35.4-28.7-64.1-64.1-64.1c-35.4,0-64.1,28.7-64.1,64.1c0,11.4,3,22,8.1,31.3l0,0
-c0.8,1.6,2.8,2.3,4.5,1.5c1.6-0.8,2.3-2.8,1.4-4.5l-1.8,0.9l1.8-0.9c-4.8-8.4-7.5-18.1-7.5-28.4c0-31.8,25.8-57.6,57.6-57.6
-c31.8,0,57.6,25.8,57.6,57.6c0,10.3-2.8,20.1-7.5,28.5l0,0c0,0,0,0,0,0.1c0,0,0,0,0,0.1l0,0c-0.7,1.6,0,3.6,1.6,4.4
-c1.6,0.8,3.6,0.1,4.5-1.6l0,0C258.8,1454.4,261.7,1443.8,261.7,1432.5z"/>
-<circle fill="#5E5E5E" cx="197.6" cy="1433.5" r="44.2"/>
-
+  <stop {{ valueOffset potValue }} offset="1" style="stop-color:#5ED0EF"/>
+  </linearGradient>
+<path fill="url(#SVGID_1_)" d="M1296.7,1432.5c0-35.4,28.7-64.1,64.1-64.1c35.4,0,64.1,28.7,64.1,64.1c0,11.4-3,22-8.1,31.3l0,0
+c-0.8,1.6-2.8,2.3-4.5,1.5c-1.6-0.8-2.3-2.8-1.4-4.5l1.8,0.9l-1.8-0.9c4.8-8.4,7.5-18.1,7.5-28.4c0-31.8-25.8-57.6-57.6-57.6
+c-31.8,0-57.6,25.8-57.6,57.6c0,10.3,2.8,20.1,7.5,28.5l0,0c0,0,0,0,0,0.1c0,0,0,0,0,0.1l0,0c0.7,1.6,0,3.6-1.6,4.4
+c-1.6,0.8-3.6,0.1-4.5-1.6l0,0C1299.6,1454.4,1296.7,1443.8,1296.7,1432.5z"/>
+<circle fill="#5E5E5E" cx="1360.8" cy="1433.5" r="44.2"/>
 <g>
-  <polygon offset="{{ potValue }}" fill="#13A6DC" points="136.4,1554.5 134.1,1554.5 134.1,1549.9 136.4,1548.6 	"/>
-  <polygon offset="{{ potValue }}" fill="#13A6DC" points="141.1,1554.5 138.8,1554.5 138.8,1549.6 141.1,1548.3 	"/>
-  <polygon fill="#13A6DC" points="145.2,1554.5 142.9,1554.5 142.9,1549.3 145.2,1548 	"/>
-  <polygon fill="#13A6DC" points="149.9,1554.5 147.6,1554.5 147.6,1548.8 149.9,1547.5 	"/>
-  <polygon fill="#13A6DC" points="154.6,1554.5 152.3,1554.5 152.3,1548.3 154.6,1547 	"/>
-  <polygon fill="#13A6DC" points="159.2,1554.5 156.9,1554.5 156.9,1547.7 159.2,1546.4 	"/>
-  <polygon fill="#13A6DC" points="163.4,1554.5 161.2,1554.5 161.2,1547.1 163.4,1545.8 	"/>
-  <polygon fill="#13A6DC" points="168,1554.5 165.7,1554.5 165.7,1546.5 168,1545.2 	"/>
-  <polygon fill="#13A6DC" points="172.6,1554.5 170.3,1554.5 170.3,1545.7 172.6,1544.4 	"/>
-  <polygon fill="#13A6DC" points="176.9,1554.5 174.7,1554.5 174.7,1545 176.9,1543.7 	"/>
-  <polygon fill="#13A6DC" points="181.6,1554.5 179.3,1554.5 179.3,1544.1 181.6,1542.9 	"/>
-  <polygon fill="#13A6DC" points="186.2,1554.5 183.9,1554.5 183.9,1543.3 186.2,1542 	"/>
-  <polygon fill="#13A6DC" points="190.6,1554.5 188.3,1554.5 188.3,1542.5 190.6,1541.2 	"/>
-  <polygon fill="#15A28A" points="195.1,1554.5 192.8,1554.5 192.8,1541.4 195.1,1540.1 	"/>
-  <polygon fill="#15A28A" points="199.7,1554.5 197.5,1554.5 197.5,1540.2 199.7,1538.9 	"/>
-  <polygon fill="#15A28A" points="204.4,1554.5 202.1,1554.5 202.1,1539 204.4,1537.7 	"/>
-  <polygon fill="#15A28A" points="208.6,1554.5 206.3,1554.5 206.3,1537.8 208.6,1536.5 	"/>
-  <polygon fill="#15A28A" points="213.1,1554.5 210.9,1554.5 210.9,1536.5 213.1,1535.2 	"/>
-  <polygon fill="#16A066" points="217.8,1554.5 215.6,1554.5 215.6,1534.8 217.8,1533.5 	"/>
-  <polygon fill="#16A066" points="222.4,1554.5 220.1,1554.5 220.1,1533.3 222.4,1532 	"/>
-  <polygon fill="#16A066" points="226.7,1554.5 224.5,1554.5 224.5,1531.9 226.7,1530.6 	"/>
-  <polygon fill="#16A066" points="231.3,1554.5 229,1554.5 229,1530.1 231.3,1528.8 	"/>
-  <polygon fill="#16A066" points="235.9,1554.5 233.7,1554.5 233.7,1527.8 235.9,1526.5 	"/>
-  <polygon fill="#5E5E5E" points="240.3,1554.5 238,1554.5 238,1525.9 240.3,1524.6 	"/>
-  <polygon fill="#5E5E5E" points="244.9,1554.5 242.6,1554.5 242.6,1523.5 244.9,1522.2 	"/>
-  <polygon fill="#5E5E5E" points="249.4,1554.5 247.1,1554.5 247.1,1521.1 249.4,1519.8 	"/>
-  <polygon fill="#5E5E5E" points="254.1,1554.5 251.8,1554.5 251.8,1518.1 254.1,1516.8 	"/>
-  <polygon fill="#5E5E5E" points="258.3,1554.5 256.1,1554.5 256.1,1515 258.3,1513.7 	"/>
-  <polygon fill="#5E5E5E" points="262.9,1554.5 260.6,1554.5 260.6,1511.4 262.9,1510.1 	"/>
+
+  <polygon fill="#13A6DC" points="1413.2,1554.5 1415.5,1554.5 1415.5,1549.3 1413.2,1548 	"/>
+  <polygon fill="#13A6DC" points="1408.5,1554.5 1410.8,1554.5 1410.8,1548.8 1408.5,1547.5 	"/>
+  <polygon fill="#13A6DC" points="1403.8,1554.5 1406.1,1554.5 1406.1,1548.3 1403.8,1547 	"/>
+  <polygon fill="#13A6DC" points="1399.2,1554.5 1401.5,1554.5 1401.5,1547.7 1399.2,1546.4 	"/>
+  <polygon fill="#13A6DC" points="1395,1554.5 1397.2,1554.5 1397.2,1547.1 1395,1545.8 	"/>
+  <polygon fill="#13A6DC" points="1390.4,1554.5 1392.7,1554.5 1392.7,1546.5 1390.4,1545.2 	"/>
+  <polygon fill="#13A6DC" points="1385.8,1554.5 1388.1,1554.5 1388.1,1545.7 1385.8,1544.4 	"/>
+  <polygon fill="#13A6DC" points="1381.5,1554.5 1383.7,1554.5 1383.7,1545 1381.5,1543.7 	"/>
+  <polygon fill="#13A6DC" points="1376.9,1554.5 1379.1,1554.5 1379.1,1544.1 1376.9,1542.9 	"/>
+  <polygon fill="#13A6DC" points="1372.2,1554.5 1374.5,1554.5 1374.5,1543.3 1372.2,1542 	"/>
+  <polygon fill="#13A6DC" points="1367.8,1554.5 1370.1,1554.5 1370.1,1542.5 1367.8,1541.2 	"/>
+  <polygon fill="#15A28A" points="1363.4,1554.5 1365.6,1554.5 1365.6,1541.4 1363.4,1540.1 	"/>
+  <polygon fill="#15A28A" points="1358.7,1554.5 1360.9,1554.5 1360.9,1540.2 1358.7,1538.9 	"/>
+  <polygon fill="#15A28A" points="1354,1554.5 1356.3,1554.5 1356.3,1539 1354,1537.7 	"/>
+  <polygon fill="#15A28A" points="1349.9,1554.5 1352.1,1554.5 1352.1,1537.8 1349.9,1536.5 	"/>
+  <polygon fill="#15A28A" points="1345.3,1554.5 1347.5,1554.5 1347.5,1536.5 1345.3,1535.2 	"/>
+  <polygon fill="#16A066" points="1340.6,1554.5 1342.9,1554.5 1342.9,1534.8 1340.6,1533.5 	"/>
+  <polygon fill="#16A066" points="1336,1554.5 1338.3,1554.5 1338.3,1533.3 1336,1532 	"/>
+  <polygon fill="#16A066" points="1331.7,1554.5 1333.9,1554.5 1333.9,1531.9 1331.7,1530.6 	"/>
+  <polygon fill="#16A066" points="1327.1,1554.5 1329.4,1554.5 1329.4,1530.1 1327.1,1528.8 	"/>
+  <polygon fill="#16A066" points="1322.5,1554.5 1324.7,1554.5 1324.7,1527.8 1322.5,1526.5 	"/>
+  <polygon fill="#5E5E5E" points="1318.1,1554.5 1320.4,1554.5 1320.4,1525.9 1318.1,1524.6 	"/>
+  <polygon fill="#5E5E5E" points="1313.5,1554.5 1315.8,1554.5 1315.8,1523.5 1313.5,1522.2 	"/>
+  <polygon fill="#5E5E5E" points="1309,1554.5 1311.3,1554.5 1311.3,1521.1 1309,1519.8 	"/>
+  <polygon fill="#5E5E5E" points="1304.4,1554.5 1306.6,1554.5 1306.6,1518.1 1304.4,1516.8 	"/>
+  <polygon fill="#5E5E5E" points="1300.1,1554.5 1302.3,1554.5 1302.3,1515 1300.1,1513.7 	"/>
+  <polygon fill="#5E5E5E" points="1295.5,1554.5 1297.8,1554.5 1297.8,1511.4 1295.5,1510.1 	"/>
 </g>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="19.9" cy="1366" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="19.9" cy="1376" r="3.5"/>
-<circle fill="#5E5E5E" cx="10.3" cy="1366" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="10.3" cy="1376" r="3.5"/>
-<a xlink:href="#test" ><polygon  onkeyup="{{temperatuur}}" fill="#5E5E5E" points="27,1392.8 33.5,1399.8 20.6,1399.8 "/> </a>
-<a xlink:href="/svg/index.html" ><polygon fill="#5E5E5E" points="81.9,1392.8 88.4,1399.8 75.5,1399.8 "/> </a>
-<a xlink:href="/svg/index.html" ><polygon fill="#5E5E5E" points="82,1470.9 75.5,1463.9 88.4,1463.9 "/> </a>
-<a xlink:href="/svg/index.html" ><polygon fill="#5E5E5E" points="27.1,1470.9 20.6,1463.9 33.5,1463.9 "/> </a>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="112.4" y1="1567.4" x2="112.4" y2="1354.6"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="2.5512" stroke-miterlimit="10" x1="283.2" y1="1566.8" x2="283.2" y2="1353.9"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="2.5512" stroke-miterlimit="10" x1="566.2" y1="1566.8" x2="566.2" y2="1353.9"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="303.8" cy="1365.7" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="303.8" cy="1375.7" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-miterlimit="10" cx="294.2" cy="1365.7" r="3.5"/>
-<circle fill="#5E5E5E" cx="294.2" cy="1375.7" r="3.5"/>
-<circle fill="#5E5E5E" cx="1012.3" cy="1364.5" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1012.3" cy="1374.5" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-miterlimit="10" cx="1002.6" cy="1364.5" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1002.6" cy="1374.5" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1295.4" cy="1365.5" r="3.5"/>
-<circle fill="#5E5E5E" cx="1295.4" cy="1375.5" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-miterlimit="10" cx="1285.8" cy="1365.5" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1285.8" cy="1375.5" r="3.5"/>
-<text transform="matrix(1 0 0 1 134.0838 1520.4802)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Open Sans'" font-size="11.3386">243 g </tspan><tspan x="31.6" y="0" fill="#5E5E5E" font-family="'Open Sans'" font-size="11.3386">/ 475 g</tspan></text>
-<text transform="matrix(1 0 0 1 142.0826 1475.4451)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MIN</text>
-<text transform="matrix(1 0 0 1 236.3411 1475.4692)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MAX</text>
-<text transform="matrix(1 0 0 1 18.4887 1537.2662)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">17 . 22</text>
-
-<text transform="matrix(1 0 0 1 18.4888 1439.1802)" fill="#CDCDCD"  onkeyup="press(2)" font-family="'Open Sans'" font-size="22.6772">09 . {{temperatuur}} </text>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1538.5" cy="1366" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1538.5" cy="1376" r="3.5"/>
+<circle fill="#5E5E5E" cx="1548.1" cy="1366" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1548.1" cy="1376" r="3.5"/>
+<polygon fill="#5E5E5E" points="1531.4,1392.8 1524.9,1399.8 1537.8,1399.8 "/>
+<polygon fill="#5E5E5E" points="1476.5,1392.8 1470,1399.8 1482.9,1399.8 "/>
+<polygon fill="#5E5E5E" points="1476.4,1470.9 1482.9,1463.9 1470,1463.9 "/>
+<polygon fill="#5E5E5E" points="1531.3,1470.9 1537.8,1463.9 1524.9,1463.9 "/>
+<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="1446" y1="1567.4" x2="1446" y2="1354.6"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="2.5512" stroke-miterlimit="10" x1="1275.2" y1="1566.8" x2="1275.2" y2="1353.9"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1254.6" cy="1365.7" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1254.6" cy="1375.7" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-miterlimit="10" cx="1264.2" cy="1365.7" r="3.5"/>
+<circle fill="#5E5E5E" cx="1264.2" cy="1375.7" r="3.5"/>
+<circle fill="#5E5E5E" cx="546.1" cy="1364.5" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="546.1" cy="1374.5" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-miterlimit="10" cx="555.8" cy="1364.5" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="555.8" cy="1374.5" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="263" cy="1365.5" r="3.5"/>
+<circle fill="#5E5E5E" cx="263" cy="1375.5" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-miterlimit="10" cx="272.6" cy="1365.5" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="272.6" cy="1375.5" r="3.5"/>
+<text transform="matrix(-1 0 0 1 1424.3188 1520.4802)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Open Sans'" font-size="11.3386"> {{ pressureValue }} g </tspan><tspan x="31.6" y="0" fill="#5E5E5E" font-family="'Open Sans'" font-size="11.3386">/ 475 g</tspan></text>
+<text transform="matrix(-1 0 0 1 1416.3198 1475.4451)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MIN</text>
+<text transform="matrix(-1 0 0 1 1322.0615 1475.4692)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MAX</text>
 
 
-<line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="97" y1="1495.4" x2="13.8" y2="1495.4"/>
-<line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="227" y1="1382.5" x2="230.7" y2="1377.3"/>
-<line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="229.1" y1="1383.9" x2="232.8" y2="1378.7"/>
-<rect x="993.4" y="1354" fill="#111111" width="282.3" height="212.6"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="1106.4" y1="1494.4" x2="1275.2" y2="1494.4"/>
-<path fill="#363636" d="M1255.7,1432.5c0-35.4-28.7-64.1-64.1-64.1s-64.1,28.7-64.1,64.1c0,11.4,3,22,8.1,31.3l0,0
-c0.8,1.6,2.8,2.3,4.5,1.5c1.6-0.8,2.3-2.8,1.4-4.5l-1.8,0.9l1.8-0.9c-4.8-8.4-7.5-18.1-7.5-28.4c0-31.8,25.8-57.6,57.6-57.6
-s57.6,25.8,57.6,57.6c0,10.3-2.8,20.1-7.5,28.5l0,0c0,0,0,0,0,0.1c0,0,0,0,0,0.1l0,0c-0.7,1.6,0,3.6,1.6,4.4
-c1.6,0.8,3.6,0.1,4.5-1.6l0,0C1252.8,1454.4,1255.7,1443.8,1255.7,1432.5z"/>
-<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="1127.465" y1="1416.9651" x2="1225.5436" y2="1416.9651">
-  <stop  offset="0" style="stop-color:#5ED0EF"/>
-  <stop  offset="0.3373" style="stop-color:#005C94"/>
-  <stop  offset="0.5883" style="stop-color:#C3302D"/>
-  <stop  offset="1" style="stop-color:#590400"/>
-</linearGradient>
-<path fill="url(#SVGID_3_)" d="M1224.1,1377.3L1224.1,1377.3L1224.1,1377.3c-0.6-0.4-0.3-0.3-1-0.7c-9.3-5.3-20.1-8.3-31.6-8.3
-c-35.4,0-64.1,28.7-64.1,64.1c0,11.4,3,22,8.1,31.3l0,0c0.8,1.6,2.8,2.3,4.5,1.5c1.6-0.8,2.3-2.8,1.4-4.5l-1.8,0.9l1.8-0.9
-c-4.8-8.4-7.5-18.1-7.5-28.4c0-31.8,25.8-57.6,57.6-57.6c10.3,0,20,2.7,28.4,7.5l0.5,0.3l0,0c0.2,0.1,0.4,0.2,0.6,0.3l0,0l0,0
-c1.4,0.6,3.1,0.2,3.9-1C1226,1380.4,1225.6,1378.4,1224.1,1377.3z"/>
-<circle fill="#5E5E5E" cx="1191.6" cy="1433.5" r="44.2"/>
-<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1220.3199" y1="1376.4838" x2="1227.6051" y2="1385.1658">
-  <stop  offset="0" style="stop-color:#D6D6D6"/>
-  <stop  offset="0.1858" style="stop-color:#D3D3D3"/>
-  <stop  offset="1" style="stop-color:#A2A2A2"/>
-</linearGradient>
-<circle fill="url(#SVGID_4_)" cx="1224" cy="1380.8" r="5.7"/>
+<text transform="matrix(-1 0 0 1 1539.9131 1439.4802)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">{{temperatuur}}. {{temperatuurtwee}}</text>
+
+
+<line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="1461.4" y1="1495.4" x2="1544.6" y2="1495.4"/>
+<rect x="282.7" y="1354" fill="#111111" width="282.3" height="212.6"/>
+<circle fill="#5E5E5E" cx="366.8" cy="1433.5" r="44.2"/>
 <g>
-  <polygon fill="#13A6DC" points="1130.4,1554.5 1128.1,1554.5 1128.1,1549.9 1130.4,1548.6 	"/>
-  <polygon fill="#13A6DC" points="1135.1,1554.5 1132.8,1554.5 1132.8,1549.6 1135.1,1548.3 	"/>
-  <polygon fill="#13A6DC" points="1139.2,1554.5 1136.9,1554.5 1136.9,1549.3 1139.2,1548 	"/>
-  <polygon fill="#13A6DC" points="1143.9,1554.5 1141.6,1554.5 1141.6,1548.8 1143.9,1547.5 	"/>
-  <polygon fill="#13A6DC" points="1148.6,1554.5 1146.3,1554.5 1146.3,1548.3 1148.6,1547 	"/>
-  <polygon fill="#13A6DC" points="1153.2,1554.5 1150.9,1554.5 1150.9,1547.7 1153.2,1546.4 	"/>
-  <polygon fill="#13A6DC" points="1157.4,1554.5 1155.2,1554.5 1155.2,1547.1 1157.4,1545.8 	"/>
-  <polygon fill="#13A6DC" points="1162,1554.5 1159.7,1554.5 1159.7,1546.5 1162,1545.2 	"/>
-  <polygon fill="#13A6DC" points="1166.6,1554.5 1164.3,1554.5 1164.3,1545.7 1166.6,1544.4 	"/>
-  <polygon fill="#13A6DC" points="1170.9,1554.5 1168.7,1554.5 1168.7,1545 1170.9,1543.7 	"/>
-  <polygon fill="#13A6DC" points="1175.6,1554.5 1173.3,1554.5 1173.3,1544.1 1175.6,1542.9 	"/>
-  <polygon fill="#13A6DC" points="1180.2,1554.5 1177.9,1554.5 1177.9,1543.3 1180.2,1542 	"/>
-  <polygon fill="#13A6DC" points="1184.6,1554.5 1182.3,1554.5 1182.3,1542.5 1184.6,1541.2 	"/>
-  <polygon fill="#15A28A" points="1189.1,1554.5 1186.8,1554.5 1186.8,1541.4 1189.1,1540.1 	"/>
-  <polygon fill="#15A28A" points="1193.7,1554.5 1191.5,1554.5 1191.5,1540.2 1193.7,1538.9 	"/>
-  <polygon fill="#15A28A" points="1198.4,1554.5 1196.1,1554.5 1196.1,1539 1198.4,1537.7 	"/>
-  <polygon fill="#15A28A" points="1202.6,1554.5 1200.3,1554.5 1200.3,1537.8 1202.6,1536.5 	"/>
-  <polygon fill="#15A28A" points="1207.1,1554.5 1204.9,1554.5 1204.9,1536.5 1207.1,1535.2 	"/>
-  <polygon fill="#16A066" points="1211.8,1554.5 1209.6,1554.5 1209.6,1534.8 1211.8,1533.5 	"/>
-  <polygon fill="#16A066" points="1216.4,1554.5 1214.1,1554.5 1214.1,1533.3 1216.4,1532 	"/>
-  <polygon fill="#16A066" points="1220.7,1554.5 1218.5,1554.5 1218.5,1531.9 1220.7,1530.6 	"/>
-  <polygon fill="#16A066" points="1225.3,1554.5 1223,1554.5 1223,1530.1 1225.3,1528.8 	"/>
-  <polygon fill="#16A066" points="1229.9,1554.5 1227.7,1554.5 1227.7,1527.8 1229.9,1526.5 	"/>
-  <polygon fill="#5E5E5E" points="1234.3,1554.5 1232,1554.5 1232,1525.9 1234.3,1524.6 	"/>
-  <polygon fill="#5E5E5E" points="1238.9,1554.5 1236.6,1554.5 1236.6,1523.5 1238.9,1522.2 	"/>
-  <polygon fill="#5E5E5E" points="1243.4,1554.5 1241.1,1554.5 1241.1,1521.1 1243.4,1519.8 	"/>
-  <polygon fill="#5E5E5E" points="1248.1,1554.5 1245.8,1554.5 1245.8,1518.1 1248.1,1516.8 	"/>
-  <polygon fill="#5E5E5E" points="1252.3,1554.5 1250.1,1554.5 1250.1,1515 1252.3,1513.7 	"/>
-  <polygon fill="#5E5E5E" points="1256.9,1554.5 1254.6,1554.5 1254.6,1511.4 1256.9,1510.1 	"/>
+  <polygon fill="#13A6DC" points="428,1554.5 430.3,1554.5 430.3,1549.9 428,1548.6 	"/>
+  <polygon fill="#13A6DC" points="423.3,1554.5 425.6,1554.5 425.6,1549.6 423.3,1548.3 	"/>
+  <polygon fill="#13A6DC" points="419.2,1554.5 421.5,1554.5 421.5,1549.3 419.2,1548 	"/>
+  <polygon fill="#13A6DC" points="414.5,1554.5 416.8,1554.5 416.8,1548.8 414.5,1547.5 	"/>
+  <polygon fill="#13A6DC" points="409.8,1554.5 412.1,1554.5 412.1,1548.3 409.8,1547 	"/>
+  <polygon fill="#13A6DC" points="405.2,1554.5 407.5,1554.5 407.5,1547.7 405.2,1546.4 	"/>
+  <polygon fill="#13A6DC" points="401,1554.5 403.2,1554.5 403.2,1547.1 401,1545.8 	"/>
+  <polygon fill="#13A6DC" points="396.4,1554.5 398.7,1554.5 398.7,1546.5 396.4,1545.2 	"/>
+  <polygon fill="#13A6DC" points="391.8,1554.5 394.1,1554.5 394.1,1545.7 391.8,1544.4 	"/>
+  <polygon fill="#13A6DC" points="387.5,1554.5 389.7,1554.5 389.7,1545 387.5,1543.7 	"/>
+  <polygon fill="#13A6DC" points="382.9,1554.5 385.1,1554.5 385.1,1544.1 382.9,1542.9 	"/>
+  <polygon fill="#13A6DC" points="378.2,1554.5 380.5,1554.5 380.5,1543.3 378.2,1542 	"/>
+  <polygon fill="#13A6DC" points="373.8,1554.5 376.1,1554.5 376.1,1542.5 373.8,1541.2 	"/>
+  <polygon fill="#15A28A" points="369.4,1554.5 371.6,1554.5 371.6,1541.4 369.4,1540.1 	"/>
+  <polygon fill="#15A28A" points="364.7,1554.5 366.9,1554.5 366.9,1540.2 364.7,1538.9 	"/>
+  <polygon fill="#15A28A" points="360,1554.5 362.3,1554.5 362.3,1539 360,1537.7 	"/>
+  <polygon fill="#15A28A" points="355.9,1554.5 358.1,1554.5 358.1,1537.8 355.9,1536.5 	"/>
+  <polygon fill="#15A28A" points="351.3,1554.5 353.5,1554.5 353.5,1536.5 351.3,1535.2 	"/>
+  <polygon fill="#16A066" points="346.6,1554.5 348.9,1554.5 348.9,1534.8 346.6,1533.5 	"/>
+  <polygon fill="#16A066" points="342,1554.5 344.3,1554.5 344.3,1533.3 342,1532 	"/>
+  <polygon fill="#16A066" points="337.7,1554.5 339.9,1554.5 339.9,1531.9 337.7,1530.6 	"/>
+  <polygon fill="#16A066" points="333.1,1554.5 335.4,1554.5 335.4,1530.1 333.1,1528.8 	"/>
+  <polygon fill="#16A066" points="328.5,1554.5 330.7,1554.5 330.7,1527.8 328.5,1526.5 	"/>
+  <polygon fill="#5E5E5E" points="324.1,1554.5 326.4,1554.5 326.4,1525.9 324.1,1524.6 	"/>
+  <polygon fill="#5E5E5E" points="319.5,1554.5 321.8,1554.5 321.8,1523.5 319.5,1522.2 	"/>
+  <polygon fill="#5E5E5E" points="315,1554.5 317.3,1554.5 317.3,1521.1 315,1519.8 	"/>
+  <polygon fill="#5E5E5E" points="310.4,1554.5 312.6,1554.5 312.6,1518.1 310.4,1516.8 	"/>
+  <polygon fill="#5E5E5E" points="306.1,1554.5 308.3,1554.5 308.3,1515 306.1,1513.7 	"/>
+  <polygon fill="#5E5E5E" points="301.5,1554.5 303.8,1554.5 303.8,1511.4 301.5,1510.1 	"/>
 </g>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1013.9" cy="1366" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1013.9" cy="1376" r="3.5"/>
-<circle fill="#5E5E5E" cx="1004.3" cy="1366" r="3.5"/>
-<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="1004.3" cy="1376" r="3.5"/>
-<polygon fill="#5E5E5E" points="1021,1392.8 1027.5,1399.8 1014.6,1399.8 "/>
-<polygon fill="#5E5E5E" points="1075.9,1392.8 1082.4,1399.8 1069.5,1399.8 "/>
-<polygon fill="#5E5E5E" points="1076,1470.9 1069.5,1463.9 1082.4,1463.9 "/>
-<polygon fill="#5E5E5E" points="1021.1,1470.9 1014.6,1463.9 1027.5,1463.9 "/>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="1106.4" y1="1567.4" x2="1106.4" y2="1352.6"/>
-<text transform="matrix(1 0 0 1 1128.0837 1520.4801)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Open Sans'" font-size="11.3386">243 g </tspan><tspan x="31.6" y="0" fill="#5E5E5E" font-family="'Open Sans'" font-size="11.3386">/ 475 g</tspan></text>
-<text transform="matrix(1 0 0 1 1136.0826 1475.4451)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MIN</text>
-<text transform="matrix(1 0 0 1 1230.3411 1475.4691)" fill="#8B8B89" font-family="'Open Sans'" font-size="7.3701">MAX</text>
-<text transform="matrix(1 0 0 1 1012.4886 1537.2661)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">17 . 22</text>
-
-<text transform="matrix(1 0 0 1 1012.4887 1439.4802)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">09 . 32</text>
-
-<line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="1091" y1="1495.4" x2="1007.8" y2="1495.4"/>
-<line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="1221" y1="1382.5" x2="1224.7" y2="1377.3"/>
-<line fill="none" stroke="#444444" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="1223.1" y1="1383.9" x2="1226.8" y2="1378.7"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="2.5512" stroke-miterlimit="10" x1="1559" y1="1353.9" x2="0" y2="1353.9"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="2.5512" stroke-miterlimit="10" x1="992.3" y1="1566.8" x2="992.3" y2="1353.9"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="2.5512" stroke-miterlimit="10" x1="1275.3" y1="1566.8" x2="1275.3" y2="1353.9"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="566.2" y1="1383.7" x2="995.7" y2="1383.7"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="711" y1="1567.4" x2="711" y2="1383.7"/>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="711" y1="1510.7" x2="566.2" y2="1510.7"/>
-<circle fill="#5E5E5E" cx="605.1" cy="1419.1" r="20.4"/>
-<circle fill="#131313" cx="668.1" cy="1419.7" r="22"/>
-<circle fill="#131313" cx="606.7" cy="1478.7" r="22"/>
-<circle fill="#131313" cx="668.1" cy="1479.1" r="19.7"/>
-<polygon fill="#5E5E5E" points="685.8,1541 678.8,1547.5 678.8,1534.7 "/>
-<polygon fill="#5E5E5E" points="589.2,1541.2 596.2,1534.7 596.2,1547.5 "/>
-<text transform="matrix(1 0 0 1 613.1719 1537.1067)" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Tijd klaar:</text>
-<text transform="matrix(1 0 0 1 625.7295 1553.1067)" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">18.42</text>
-<text transform="matrix(1 0 0 1 768.104 1449.6067)"><tspan x="0" y="0" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Doe wat olijfolie in de pan. Fruit</tspan><tspan x="0" y="15.6" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">de gesnipperde uit en knoflook op</tspan><tspan x="0" y="31.2" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">laag vuur. Wanneer de uit zacht is, </tspan><tspan x="0" y="46.8" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">voeg je de arboriorijst toe en bak</tspan><tspan x="0" y="62.4" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">je de rijst een minuutje met de ui.</tspan></text>
-<text transform="matrix(1 0 0 1 720.104 1449.6067)"><tspan x="0" y="0" fill="#414141" font-family="'Open Sans'" font-size="10.8682">ruit</tspan><tspan x="0" y="15.6" fill="#414141" font-family="'Open Sans'" font-size="10.8682">ok op</tspan><tspan x="0" y="31.2" fill="#414141" font-family="'Open Sans'" font-size="10.8682">cht is, </tspan><tspan x="0" y="46.8" fill="#414141" font-family="'Open Sans'" font-size="10.8682"> bak</tspan><tspan x="0" y="62.4" fill="#414141" font-family="'Open Sans'" font-size="10.8682">e ui.</tspan></text>
-<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="713.228" y1="1479.0533" x2="736.02" y2="1479.0533">
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="544.5" cy="1366" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="544.5" cy="1376" r="3.5"/>
+<circle fill="#5E5E5E" cx="554.1" cy="1366" r="3.5"/>
+<circle fill="none" stroke="#5E5E5E" stroke-width="0.7087" stroke-miterlimit="10" cx="554.1" cy="1376" r="3.5"/>
+<polygon fill="#5E5E5E" points="537.4,1392.8 530.9,1399.8 543.8,1399.8 "/>
+<polygon fill="#5E5E5E" points="482.5,1392.8 476,1399.8 488.9,1399.8 "/>
+<polygon fill="#5E5E5E" points="482.4,1470.9 488.9,1463.9 476,1463.9 "/>
+<polygon fill="#5E5E5E" points="537.3,1470.9 543.8,1463.9 530.9,1463.9 "/>
+<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="452" y1="1567.4" x2="452" y2="1354"/>
+<text transform="matrix(-1 0 0 1 430.3188 1520.4801)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Open Sans'" font-size="11.3386">243 g </tspan><tspan x="31.6" y="0" fill="#5E5E5E" font-family="'Open Sans'" font-size="11.3386">/ 475 g</tspan></text>
+<text transform="matrix(-1 0 0 1 422.3198 1475.4451)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MIN</text>
+<text transform="matrix(-1 0 0 1 328.0615 1475.4691)" fill="#8B8B89" font-family="'Open Sans-Semibold'" font-size="7.3701">MAX</text>
+<text transform="matrix(-1 0 0 1 547.2744 1519.0548)"><tspan x="0" y="0" fill="#CDCDCD" font-family="'Open Sans'" font-size="11.3386">Iingrediënt is </tspan><tspan x="8.6" y="17" fill="#CDCDCD" font-family="'Open Sans'" font-size="11.3386">klaar over</tspan><tspan x="65.6" y="17" fill="#CDCDCD" font-family="'Open Sans'" font-size="14.1732"> </tspan><tspan x="-1.5" y="34" fill="#CDCDCD" font-family="'Open Sans'" font-size="14.1732">10 minuten</tspan></text>
+<text transform="matrix(-1 0 0 1 545.9131 1439.4802)" fill="#CDCDCD" font-family="'Open Sans'" font-size="22.6772">09 . 32</text>
+<line fill="none" stroke="#FFFFFF" stroke-width="1.4173" stroke-miterlimit="10" x1="467.4" y1="1495.4" x2="550.6" y2="1495.4"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="2.8346" stroke-miterlimit="10" x1="283.1" y1="1566.8" x2="283.1" y2="1353.9"/>
+<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="992.2" y1="1383.7" x2="565" y2="1383.7"/>
+<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="847.4" y1="1510.7" x2="992.2" y2="1510.7"/>
+<circle fill="#7C7C7C" cx="953.3" cy="1419.1" r="20.4"/>
+<circle fill="#3F3F3F" cx="890.3" cy="1419.7" r="22"/>
+<circle fill="#3F3F3F" cx="951.7" cy="1478.7" r="22"/>
+<circle fill="#3F3F3F" cx="890.3" cy="1479.1" r="19.7"/>
+<polygon fill="#5E5E5E" points="872.6,1541 879.6,1547.5 879.6,1534.7 "/>
+<polygon fill="#5E5E5E" points="969.2,1541.2 962.2,1534.7 962.2,1547.5 "/>
+<text transform="matrix(-1 0 0 1 945.2314 1537.1067)" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Tijd klaar:</text>
+<text transform="matrix(-1 0 0 1 932.6738 1553.1067)" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">18.42</text>
+<text transform="matrix(-1 0 0 1 790.2993 1449.6067)"><tspan x="0" y="0" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Doe wat olijfolie in de pan. Fruit</tspan><tspan x="0" y="15.6" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">de gesnipperde uit en knoflook op</tspan><tspan x="0" y="31.2" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">laag vuur. Wanneer de uit zacht is, </tspan><tspan x="0" y="46.8" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">voeg je de arboriorijst toe en bak</tspan><tspan x="0" y="62.4" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">je de rijst een minuutje met de ui.</tspan></text>
+<text transform="matrix(-1 0 0 1 838.2993 1449.6067)"><tspan x="0" y="0" fill="#414141" font-family="'Open Sans'" font-size="10.8682">ruit</tspan><tspan x="0" y="15.6" fill="#414141" font-family="'Open Sans'" font-size="10.8682">ok op</tspan><tspan x="0" y="31.2" fill="#414141" font-family="'Open Sans'" font-size="10.8682">cht is, </tspan><tspan x="0" y="46.8" fill="#414141" font-family="'Open Sans'" font-size="10.8682"> bak</tspan><tspan x="0" y="62.4" fill="#414141" font-family="'Open Sans'" font-size="10.8682">e ui.</tspan></text>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2314.574" y1="1479.0533" x2="2337.366" y2="1479.0533" gradientTransform="matrix(-1 0 0 1 3159.7483 0)">
   <stop  offset="0" style="stop-color:#0A0A0A"/>
   <stop  offset="1" style="stop-color:#000000"/>
 </linearGradient>
-<rect x="713.2" y="1430.3" opacity="0.5" fill="url(#SVGID_5_)" width="22.8" height="97.5"/>
-<text transform="matrix(1 0 0 1 963.104 1449.6068)"><tspan x="0" y="0" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Doe </tspan><tspan x="0" y="15.6" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">de ge</tspan><tspan x="0" y="31.2" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">laag </tspan><tspan x="0" y="46.8" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">voeg </tspan><tspan x="0" y="62.4" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">je de </tspan></text>
-<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="797.228" y1="1672.6616" x2="816.728" y2="1672.6616" gradientTransform="matrix(-1 0 0 -1 1787.248 3148.1067)">
+<rect x="822.4" y="1430.3" opacity="0.5" fill="url(#SVGID_2_)" width="22.8" height="97.5"/>
+<text transform="matrix(-1 0 0 1 595.2993 1449.6068)"><tspan x="0" y="0" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Doe </tspan><tspan x="0" y="15.6" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">de ge</tspan><tspan x="0" y="31.2" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">laag </tspan><tspan x="0" y="46.8" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">voeg </tspan><tspan x="0" y="62.4" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">je de </tspan></text>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-804.1181" y1="1672.6616" x2="-784.6181" y2="1672.6616" gradientTransform="matrix(1 0 0 -1 1372.5002 3148.1067)">
   <stop  offset="0" style="stop-color:#0A0A0A"/>
   <stop  offset="1" style="stop-color:#000000"/>
 </linearGradient>
-<rect x="970.5" y="1426.7" opacity="0.5" fill="url(#SVGID_6_)" width="19.5" height="97.5"/>
-<path fill="#98958F" d="M960.4,1372.3H741.3c-1.5,0-2.7-1.2-2.7-2.7v-0.3c0-1.5,1.2-2.7,2.7-2.7h219.1c1.5,0,2.7,1.2,2.7,2.7v0.3
-C963.1,1371.1,961.9,1372.3,960.4,1372.3z"/>
-<path fill="#282828" d="M902.8,1372.4H741.2c-1.4,0-2.5-1.1-2.5-2.5v-0.8c0-1.4,1.1-2.5,2.5-2.5h161.6c1.4,0,2.5,1.1,2.5,2.5v0.8
-C905.3,1371.3,904.2,1372.4,902.8,1372.4z"/>
-<text transform="matrix(1 0 0 1 653.4001 1372.28)" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Voortgang:</text>
-<text transform="matrix(1 0 0 1 584.6869 1372.2802)" fill="#CDCDCD" font-family="'Open Sans-Italic'" font-size="10.8682">17.43</text>
-<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="631.5" y1="1353.9" x2="631.5" y2="1383.7"/>
-<circle fill="none" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="1186.8" cy="992.4" r="256.9"/>
-<circle fill="none" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="369.9" cy="993.4" r="223.8"/>
-<radialGradient id="SVGID_7_" cx="369.8822" cy="381.0807" r="278.4461" gradientUnits="userSpaceOnUse">
+<rect x="568.4" y="1426.7" opacity="0.5" fill="url(#SVGID_3_)" width="19.5" height="97.5"/>
+<path fill="#98958F" d="M598,1372.3h219.1c1.5,0,2.7-1.2,2.7-2.7v-0.3c0-1.5-1.2-2.7-2.7-2.7H598c-1.5,0-2.7,1.2-2.7,2.7v0.3
+C595.3,1371.1,596.5,1372.3,598,1372.3z"/>
+<path fill="#282828" d="M655.6,1372.4h161.6c1.4,0,2.5-1.1,2.5-2.5v-0.8c0-1.4-1.1-2.5-2.5-2.5H655.6c-1.4,0-2.5,1.1-2.5,2.5v0.8
+C653.1,1371.3,654.2,1372.4,655.6,1372.4z"/>
+<text transform="matrix(-1 0 0 1 905.0024 1372.28)" fill="#CDCDCD" font-family="'Open Sans'" font-size="10.8682">Voortgang:</text>
+<text transform="matrix(-1 0 0 1 973.7153 1372.2802)" fill="#CDCDCD" font-family="'Open Sans-Italic'" font-size="10.8682">17.43</text>
+<line fill="none" stroke="#5E5E5E" stroke-width="1.4173" stroke-miterlimit="10" x1="926.9" y1="1353.9" x2="926.9" y2="1382.4"/>
+<circle fill="none" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="371.6" cy="992.4" r="256.9"/>
+<circle fill="none" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="1188.5" cy="993.4" r="223.8"/>
+<radialGradient id="SVGID_4_" cx="1971.2283" cy="381.0807" r="278.4461" gradientTransform="matrix(-1 0 0 1 3159.7483 0)" gradientUnits="userSpaceOnUse">
   <stop  offset="0" style="stop-color:#0A0A0A"/>
   <stop  {{ valueOffset potValue }} offset="9.221471e-02" style="stop-color:#A00D0D"/>
   <stop  {{ valueOffset potValue }} offset="0.1732" style="stop-color:#B70A0A;stop-opacity:0.8"/>
@@ -259,8 +219,8 @@ C905.3,1371.3,904.2,1372.4,902.8,1372.4z"/>
   <stop  {{ valueOffset potValue }} offset="0.9813" style="stop-color:#580606;stop-opacity:0.1"/>
   <stop  offset="1" style="stop-color:#000000"/>
 </radialGradient>
-<circle  fill="url(#SVGID_7_)" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="369.9" cy="381.1" r="278.4"/>
-<radialGradient id="SVGID_8_" cx="1182.3425" cy="357.4075" r="179.1048" gradientUnits="userSpaceOnUse">
+<circle fill="url(#SVGID_4_)" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="1188.5" cy="381.1" r="278.4"/>
+<radialGradient id="SVGID_5_" cx="2783.6887" cy="357.4075" r="179.1048" gradientTransform="matrix(-1 0 0 1 3159.7483 0)" gradientUnits="userSpaceOnUse">
   <stop  offset="0" style="stop-color:#0A0A0A"/>
   <stop  offset="9.221471e-02" style="stop-color:#A00D0D"/>
   <stop  offset="0.0732" style="stop-color:#B70A0A"/>
@@ -283,7 +243,7 @@ C905.3,1371.3,904.2,1372.4,902.8,1372.4z"/>
   <stop  offset="0.5813" style="stop-color:#580606;stop-opacity:0.2;"/>
   <stop  offset="1" style="stop-color:#000000"/>
 </radialGradient>
-<circle fill="url(#SVGID_8_)" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="1182.3" cy="357.4" r="179.1"/>
+<circle fill="url(#SVGID_5_)" stroke="#919191" stroke-width="0.4337" stroke-miterlimit="10" cx="376.1" cy="357.4" r="179.1"/>
 <image overflow="visible" opacity="0.4" width="842" height="842" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0oAAANKCAYAAAC02r7tAAAACXBIWXMAAAsSAAALEgHS3X78AAAg
 AElEQVR42uzdPbLqVr434B4CngHlEVDlCRD0AEicEzkmO6lCh6TOiB2RO2EADpiAqxiBixno7f22
 uGf3NiAJ1qf0qOqpW3XbZ4PQ1/qt9V9L/2rb9l8AAAB850cAAAAQlAAAAAQlAAAAQQkAAEBQAgAA
@@ -816,9 +776,36 @@ sjkAQQmAL4WovB54F8FeqLVbGf7uHzrXn4/VIQBBCYAIg1RT0tcOU1alPg9BzYrQSRACEJQA2H6g
 apf4tfdKNbZ05Pn96bWdW46t98OzhwAEJQD4OGBlL1av3imeQsoYxYDfn70g8AAgKAEAAAhKAAAA
 ghIAAICgBAAAICgBAAAISgAAAIISAACAoAQAACAoAQAACEoAAACCEgAAgKAEAAAgKAEAAAhKAAAA
 gpI3AQAAQFACAAAQlAAAAAQlAAAAQQkAAEBQAgAAEJQAAAAEJQAAAEEJAABAUAIAABCUAAAABCUA
-AABBCQAAQFACAAAQlAAAAAQlAAAAQQkAAEBQAgAA4F//AIUvCdo1mdYkAAAAAElFTkSuQmCC" transform="matrix(0.1405 0 0 0.1405 741.7934 48)">
+AABBCQAAQFACAAAQlAAAAAQlAAAAQQkAAEBQAgAA4F//AIUvCdo1mdYkAAAAAElFTkSuQmCC" transform="matrix(-0.1405 0 0 0.1405 816.6088 48)">
 </image>
+<text transform="matrix(-1 0 0 1 385.0381 1439.7205)" fill="#CDCDCD" font-family="'Open Sans'" font-size="17.0079">75%</text>
+<text transform="matrix(-1 0 0 1 1541.2744 1517.7736)"><tspan x="0" y="0" fill="#CDCDCD" font-family="'Open Sans'" font-size="11.3386">Ingrediënt is </tspan><tspan x="8.6" y="17" fill="#CDCDCD" font-family="'Open Sans'" font-size="11.3386">klaar over</tspan><tspan x="65.6" y="17" fill="#CDCDCD" font-family="'Open Sans'" font-size="14.1732"> </tspan><tspan x="-1.5" y="34" fill="#CDCDCD" font-family="'Open Sans'" font-size="14.1732">10 minuten</tspan></text>
+<text transform="matrix(-1 0 0 1 1383.4165 1439.7208)" fill="#CDCDCD" font-family="'Open Sans'" font-size="17.0079">{{ potValue }} %</text>
+<line fill="none" stroke="#FFFFFF" stroke-width="2.5512" stroke-miterlimit="10" x1="-1.6" y1="1353.9" x2="1558.4" y2="1353.9"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="2.5512" stroke-miterlimit="10" x1="992.2" y1="1566.8" x2="992.2" y2="1353.9"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="2.5512" stroke-miterlimit="10" x1="566.1" y1="1566.8" x2="566.1" y2="1353.9"/>
+<path fill="#5E5E5E" d="M302.7,1432.5c0-35.4,28.7-64.1,64.1-64.1c35.4,0,64.1,28.7,64.1,64.1c0,11.4-3,22-8.1,31.3l0,0
+c-0.8,1.6-2.8,2.3-4.5,1.5c-1.6-0.8-2.3-2.8-1.4-4.5l1.8,0.9l-1.8-0.9c4.8-8.4,7.5-18.1,7.5-28.4c0-31.8-25.8-57.6-57.6-57.6
+c-31.8,0-57.6,25.8-57.6,57.6c0,10.3,2.8,20.1,7.5,28.5l0,0c0,0,0,0,0,0.1c0,0,0,0,0,0.1l0,0c0.7,1.6,0,3.6-1.6,4.4
+c-1.6,0.8-3.6,0.1-4.5-1.6l0,0C305.6,1454.4,302.7,1443.8,302.7,1432.5z"/>
+<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="302.6773" y1="1416.9618" x2="423.2018" y2="1416.9618">
+  <stop  offset="0" style="stop-color:#5ED0EF"/>
+  <stop  offset="0.3373" style="stop-color:#005C94"/>
+  <stop  offset="0.5883" style="stop-color:#C3302D"/>
+  <stop  offset="1" style="stop-color:#590400"/>
+</linearGradient>
+<path fill="url(#SVGID_6_)" d="M422.8,1401.2c-11-19.6-31.9-32.8-56-32.8c-35.4,0-64.1,28.7-64.1,64.1c0,11.3,3,22,8.1,31.2l0,0
+c0.8,1.7,2.8,2.4,4.5,1.6c1.6-0.8,2.3-2.7,1.6-4.4l0,0c0,0,0,0,0-0.1c0,0,0,0,0-0.1l0,0c-4.7-8.3-7.5-18.2-7.5-28.5
+c0-31.8,25.8-57.6,57.6-57.6c21.6,0,40.4,11.9,50.2,29.4c0.9,1.6,2.9,2.3,4.5,1.5C423.1,1404.8,423.6,1402.8,422.8,1401.2z"/>
+<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="420.4767" y1="1398.6156" x2="420.4767" y2="1410.0006">
+  <stop  offset="0" style="stop-color:#FFFFFF"/>
+  <stop  offset="1" style="stop-color:#A0A0A0"/>
+</linearGradient>
+<circle fill="url(#SVGID_7_)" cx="420.5" cy="1404.3" r="5.7"/>
+<line fill="none" stroke="#A0A0A0" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="417.2" y1="1405.1" x2="422.9" y2="1401.8"/>
+<line fill="none" stroke="#A0A0A0" stroke-width="0.4337" stroke-linecap="round" stroke-miterlimit="10" x1="418.2" y1="1406.7" x2="423.9" y2="1403.4"/>
+
+
 {{/with}}
 </svg>
-
 </template>

@@ -1,39 +1,12 @@
-if (Meteor.isClient) {
-  // teller start op 0
-  Session.setDefault("temperatuur", 0);
-
-  Template.test.helpers({
-    temperatuur: function () {
-      return Session.get("temperatuur");
-    }
-  });
-
-  Template.test.rendered = function() {
-    Meteor.Keybindings.addOne ('q',function () {
-      Session.set("temperatuur",Session.get("temperatuur")+1);
-      console.log("KEYUP OR CLICK");
-    });
-    Meteor.Keybindings.addOne ('a',function () {
-      Session.set("temperatuur",Session.get("temperatuur")-1);
-    });
-
-  };
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
-
-
-
 messageCollection = new Meteor.Collection('messages');
 
 
 if (Meteor.isClient) {
   // counter starts at 0
   //Session.setDefault("counter", 0);
+  Session.setDefault("temperatuur", 0);
+  Session.setDefault("temperatuurtwee", 0);
+
 
   Template.hello.helpers({
     arduino: function () {
@@ -41,7 +14,9 @@ if (Meteor.isClient) {
 		var value = messageCollection.findOne({name:'messages'});
 	//	console.log('message: '+value);
 		return value;
+
     },
+
 
     valueHelper:function(value) {
 
@@ -50,10 +25,34 @@ if (Meteor.isClient) {
 
     },
 
+    temperatuur: function () {
+      return Session.get("temperatuur");
+    },
 
+    temperatuurtwee: function () {
+      return Session.get("temperatuurtwee");
+    },
 
   });
 
+
+  Template.hello.rendered = function() {
+    Meteor.Keybindings.addOne ('g',function () {
+      Session.set("temperatuur",Session.get("temperatuur")+1);
+      console.log("KEYUP OR CLICK");
+    });
+    Meteor.Keybindings.addOne ('b',function () {
+      Session.set("temperatuur",Session.get("temperatuur")-1);
+    });
+    Meteor.Keybindings.addOne ('f',function () {
+      Session.set("temperatuurtwee",Session.get("temperatuurtwee")+1);
+      console.log("KEYUP OR CLICK");
+    });
+    Meteor.Keybindings.addOne ('p',function () {
+      Session.set("temperatuurtwee",Session.get("temperatuurtwee")-1);
+    });
+
+}
 
   Template.svgtest.helpers({
     arduino: function () {
@@ -70,7 +69,13 @@ if (Meteor.isClient) {
 
     },
 
+    temperatuur: function () {
+      return Session.get("temperatuur");
+    },
 
+    temperatuurtwee: function () {
+      return Session.get("temperatuurtwee");
+    },
 
   });
 
@@ -112,7 +117,8 @@ if (Meteor.isServer) {
       console.log('Port open');
     });
 
-
+    var temperatuur;
+    var temperatuurOne;
     var pressureValue;
     var potValue;
 
@@ -130,6 +136,7 @@ if (Meteor.isServer) {
       case 'potValue':
         potValue = valueChopped[1];
         break;
+
       }
 
 //      console.log(valueChopped);
@@ -144,7 +151,8 @@ if (Meteor.isServer) {
 		  {
           'pressureValue':pressureValue,
           'potValue':potValue,
-			     'name':'messages'
+          'temperatuur':temperatuur,
+			    'name':'messages'
         }
       );
 
